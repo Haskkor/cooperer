@@ -1,0 +1,10 @@
+{
+  "auth": {
+    "coopererd12785df": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false
+    }
+  }
+}
