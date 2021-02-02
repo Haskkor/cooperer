@@ -25,3 +25,76 @@ type Note @model {
   description: String
   image: String
 }
+
+scalar Date
+
+type Address @model {
+  country: String!
+  id: ID!
+  postalCode: String!
+  suburb: String!
+  town: String!
+  user: User!
+}
+
+type Category @model {
+  description: String!
+  id: ID!
+  image: String!
+  name: String!
+  projects: [Project] @connection(name: "CategoryProjects")
+}
+
+type Comment @model {
+  content: String!
+  id: ID!
+  project: Project @connection(name: "ProjectComments")
+  user: User!
+}
+
+type Location @model {
+  country: String!
+  id: ID!
+  postalCode: String!
+  project: Project!
+  suburb: String!
+  town: String!
+}
+
+type Project @model {
+  categories: [Category] @connection(name: "CategoryProjects")
+  comments: [Comment] @connection(name: "ProjectComments")
+  completionDate: Date
+  creationDate: Date!
+  description: String!
+  id: ID!
+  likes: [User] @connection(name: "ProjectLikes")
+  location: Location!
+  owner: User @connection(name: "ProjectOwner")
+  participants: [User] @connection(name: "ProjectParticipants")
+  photos: [String]
+  skillsNeeded: [Skill] @connection(name: "ProjectSkills")
+  stars: [User] @connection(name: "ProjectStars")
+}
+
+type Skill @model {
+  description: String!
+  id: ID!
+  name: String!
+  proficiency: String!
+  projects: [Project] @connection(name: "ProjectSkills")
+  users: [User] @connection(name: "UserSkills")
+}
+
+type User @model {
+  address: Address!
+  description: String!
+  email: String!
+  id: ID!
+  projectsCoop: [Project] @connection(name: "ProjectParticipants")
+  projectsLiked: [Project] @connection(name: "ProjectLikes")
+  projectsOwned: [Project] @connection(name: "ProjectOwner")
+  projectsStared: [Project] @connection(name: "ProjectStars")
+  skills: [Skill] @connection(name: "UserSkills")
+  userName: String!
+}
