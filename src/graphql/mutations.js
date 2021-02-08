@@ -1,304 +1,2704 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const createBlog = /* GraphQL */ `
-  mutation CreateBlog(
-    $input: CreateBlogInput!
-    $condition: ModelBlogConditionInput
+export const createAddress = /* GraphQL */ `
+  mutation CreateAddress(
+    $input: CreateAddressInput!
+    $condition: ModelAddressConditionInput
   ) {
-    createBlog(input: $input, condition: $condition) {
+    createAddress(input: $input, condition: $condition) {
+      country
       id
-      name
-      posts {
-        items {
+      postalCode
+      suburb
+      town
+      user {
+        address {
+          country
           id
-          title
-          blogID
+          postalCode
+          suburb
+          town
           createdAt
           updatedAt
         }
-        nextToken
-      }
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const updateBlog = /* GraphQL */ `
-  mutation UpdateBlog(
-    $input: UpdateBlogInput!
-    $condition: ModelBlogConditionInput
-  ) {
-    updateBlog(input: $input, condition: $condition) {
-      id
-      name
-      posts {
-        items {
-          id
-          title
-          blogID
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const deleteBlog = /* GraphQL */ `
-  mutation DeleteBlog(
-    $input: DeleteBlogInput!
-    $condition: ModelBlogConditionInput
-  ) {
-    deleteBlog(input: $input, condition: $condition) {
-      id
-      name
-      posts {
-        items {
-          id
-          title
-          blogID
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const createPost = /* GraphQL */ `
-  mutation CreatePost(
-    $input: CreatePostInput!
-    $condition: ModelPostConditionInput
-  ) {
-    createPost(input: $input, condition: $condition) {
-      id
-      title
-      blogID
-      blog {
+        description
+        email
         id
+        projectsCoop {
+          nextToken
+        }
+        projectsLiked {
+          nextToken
+        }
+        projectsOwned {
+          nextToken
+        }
+        projectsStared {
+          nextToken
+        }
+        skills {
+          nextToken
+        }
+        userName
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const updateAddress = /* GraphQL */ `
+  mutation UpdateAddress(
+    $input: UpdateAddressInput!
+    $condition: ModelAddressConditionInput
+  ) {
+    updateAddress(input: $input, condition: $condition) {
+      country
+      id
+      postalCode
+      suburb
+      town
+      user {
+        address {
+          country
+          id
+          postalCode
+          suburb
+          town
+          createdAt
+          updatedAt
+        }
+        description
+        email
+        id
+        projectsCoop {
+          nextToken
+        }
+        projectsLiked {
+          nextToken
+        }
+        projectsOwned {
+          nextToken
+        }
+        projectsStared {
+          nextToken
+        }
+        skills {
+          nextToken
+        }
+        userName
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const deleteAddress = /* GraphQL */ `
+  mutation DeleteAddress(
+    $input: DeleteAddressInput!
+    $condition: ModelAddressConditionInput
+  ) {
+    deleteAddress(input: $input, condition: $condition) {
+      country
+      id
+      postalCode
+      suburb
+      town
+      user {
+        address {
+          country
+          id
+          postalCode
+          suburb
+          town
+          createdAt
+          updatedAt
+        }
+        description
+        email
+        id
+        projectsCoop {
+          nextToken
+        }
+        projectsLiked {
+          nextToken
+        }
+        projectsOwned {
+          nextToken
+        }
+        projectsStared {
+          nextToken
+        }
+        skills {
+          nextToken
+        }
+        userName
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const createCategory = /* GraphQL */ `
+  mutation CreateCategory(
+    $input: CreateCategoryInput!
+    $condition: ModelCategoryConditionInput
+  ) {
+    createCategory(input: $input, condition: $condition) {
+      description
+      id
+      image
+      name
+      projects {
+        items {
+          id
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const updateCategory = /* GraphQL */ `
+  mutation UpdateCategory(
+    $input: UpdateCategoryInput!
+    $condition: ModelCategoryConditionInput
+  ) {
+    updateCategory(input: $input, condition: $condition) {
+      description
+      id
+      image
+      name
+      projects {
+        items {
+          id
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const deleteCategory = /* GraphQL */ `
+  mutation DeleteCategory(
+    $input: DeleteCategoryInput!
+    $condition: ModelCategoryConditionInput
+  ) {
+    deleteCategory(input: $input, condition: $condition) {
+      description
+      id
+      image
+      name
+      projects {
+        items {
+          id
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const createCategoryProject = /* GraphQL */ `
+  mutation CreateCategoryProject(
+    $input: CreateCategoryProjectInput!
+    $condition: ModelCategoryProjectConditionInput
+  ) {
+    createCategoryProject(input: $input, condition: $condition) {
+      category {
+        description
+        id
+        image
         name
-        posts {
+        projects {
           nextToken
         }
         createdAt
         updatedAt
       }
-      comments {
-        items {
-          id
-          postID
-          content
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const updatePost = /* GraphQL */ `
-  mutation UpdatePost(
-    $input: UpdatePostInput!
-    $condition: ModelPostConditionInput
-  ) {
-    updatePost(input: $input, condition: $condition) {
       id
-      title
-      blogID
-      blog {
-        id
-        name
-        posts {
+      project {
+        categories {
           nextToken
-        }
-        createdAt
-        updatedAt
-      }
-      comments {
-        items {
-          id
-          postID
-          content
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const deletePost = /* GraphQL */ `
-  mutation DeletePost(
-    $input: DeletePostInput!
-    $condition: ModelPostConditionInput
-  ) {
-    deletePost(input: $input, condition: $condition) {
-      id
-      title
-      blogID
-      blog {
-        id
-        name
-        posts {
-          nextToken
-        }
-        createdAt
-        updatedAt
-      }
-      comments {
-        items {
-          id
-          postID
-          content
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const createComment = /* GraphQL */ `
-  mutation CreateComment(
-    $input: CreateCommentInput!
-    $condition: ModelCommentConditionInput
-  ) {
-    createComment(input: $input, condition: $condition) {
-      id
-      postID
-      post {
-        id
-        title
-        blogID
-        blog {
-          id
-          name
-          createdAt
-          updatedAt
         }
         comments {
           nextToken
         }
-        createdAt
-        updatedAt
-      }
-      content
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const updateComment = /* GraphQL */ `
-  mutation UpdateComment(
-    $input: UpdateCommentInput!
-    $condition: ModelCommentConditionInput
-  ) {
-    updateComment(input: $input, condition: $condition) {
-      id
-      postID
-      post {
+        completionDate
+        creationDate
+        description
         id
-        title
-        blogID
-        blog {
+        likes {
+          nextToken
+        }
+        location {
+          country
           id
-          name
+          postalCode
+          suburb
+          town
           createdAt
           updatedAt
         }
-        comments {
+        owner {
+          description
+          email
+          id
+          userName
+          createdAt
+          updatedAt
+        }
+        participants {
+          nextToken
+        }
+        photos
+        skillsNeeded {
+          nextToken
+        }
+        stars {
           nextToken
         }
         createdAt
         updatedAt
       }
-      content
       createdAt
       updatedAt
     }
   }
 `;
-export const deleteComment = /* GraphQL */ `
-  mutation DeleteComment(
-    $input: DeleteCommentInput!
-    $condition: ModelCommentConditionInput
+export const updateCategoryProject = /* GraphQL */ `
+  mutation UpdateCategoryProject(
+    $input: UpdateCategoryProjectInput!
+    $condition: ModelCategoryProjectConditionInput
   ) {
-    deleteComment(input: $input, condition: $condition) {
-      id
-      postID
-      post {
+    updateCategoryProject(input: $input, condition: $condition) {
+      category {
+        description
         id
-        title
-        blogID
-        blog {
-          id
-          name
-          createdAt
-          updatedAt
-        }
-        comments {
+        image
+        name
+        projects {
           nextToken
         }
         createdAt
         updatedAt
       }
+      id
+      project {
+        categories {
+          nextToken
+        }
+        comments {
+          nextToken
+        }
+        completionDate
+        creationDate
+        description
+        id
+        likes {
+          nextToken
+        }
+        location {
+          country
+          id
+          postalCode
+          suburb
+          town
+          createdAt
+          updatedAt
+        }
+        owner {
+          description
+          email
+          id
+          userName
+          createdAt
+          updatedAt
+        }
+        participants {
+          nextToken
+        }
+        photos
+        skillsNeeded {
+          nextToken
+        }
+        stars {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const deleteCategoryProject = /* GraphQL */ `
+  mutation DeleteCategoryProject(
+    $input: DeleteCategoryProjectInput!
+    $condition: ModelCategoryProjectConditionInput
+  ) {
+    deleteCategoryProject(input: $input, condition: $condition) {
+      category {
+        description
+        id
+        image
+        name
+        projects {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      id
+      project {
+        categories {
+          nextToken
+        }
+        comments {
+          nextToken
+        }
+        completionDate
+        creationDate
+        description
+        id
+        likes {
+          nextToken
+        }
+        location {
+          country
+          id
+          postalCode
+          suburb
+          town
+          createdAt
+          updatedAt
+        }
+        owner {
+          description
+          email
+          id
+          userName
+          createdAt
+          updatedAt
+        }
+        participants {
+          nextToken
+        }
+        photos
+        skillsNeeded {
+          nextToken
+        }
+        stars {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const createProjectComment = /* GraphQL */ `
+  mutation CreateProjectComment(
+    $input: CreateProjectCommentInput!
+    $condition: ModelProjectCommentConditionInput
+  ) {
+    createProjectComment(input: $input, condition: $condition) {
       content
+      id
+      project {
+        categories {
+          nextToken
+        }
+        comments {
+          nextToken
+        }
+        completionDate
+        creationDate
+        description
+        id
+        likes {
+          nextToken
+        }
+        location {
+          country
+          id
+          postalCode
+          suburb
+          town
+          createdAt
+          updatedAt
+        }
+        owner {
+          description
+          email
+          id
+          userName
+          createdAt
+          updatedAt
+        }
+        participants {
+          nextToken
+        }
+        photos
+        skillsNeeded {
+          nextToken
+        }
+        stars {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      user {
+        address {
+          country
+          id
+          postalCode
+          suburb
+          town
+          createdAt
+          updatedAt
+        }
+        description
+        email
+        id
+        projectsCoop {
+          nextToken
+        }
+        projectsLiked {
+          nextToken
+        }
+        projectsOwned {
+          nextToken
+        }
+        projectsStared {
+          nextToken
+        }
+        skills {
+          nextToken
+        }
+        userName
+        createdAt
+        updatedAt
+      }
       createdAt
       updatedAt
     }
   }
 `;
-export const createNote = /* GraphQL */ `
-  mutation CreateNote(
-    $input: CreateNoteInput!
-    $condition: ModelNoteConditionInput
+export const updateProjectComment = /* GraphQL */ `
+  mutation UpdateProjectComment(
+    $input: UpdateProjectCommentInput!
+    $condition: ModelProjectCommentConditionInput
   ) {
-    createNote(input: $input, condition: $condition) {
+    updateProjectComment(input: $input, condition: $condition) {
+      content
       id
-      name
-      description
-      image
+      project {
+        categories {
+          nextToken
+        }
+        comments {
+          nextToken
+        }
+        completionDate
+        creationDate
+        description
+        id
+        likes {
+          nextToken
+        }
+        location {
+          country
+          id
+          postalCode
+          suburb
+          town
+          createdAt
+          updatedAt
+        }
+        owner {
+          description
+          email
+          id
+          userName
+          createdAt
+          updatedAt
+        }
+        participants {
+          nextToken
+        }
+        photos
+        skillsNeeded {
+          nextToken
+        }
+        stars {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      user {
+        address {
+          country
+          id
+          postalCode
+          suburb
+          town
+          createdAt
+          updatedAt
+        }
+        description
+        email
+        id
+        projectsCoop {
+          nextToken
+        }
+        projectsLiked {
+          nextToken
+        }
+        projectsOwned {
+          nextToken
+        }
+        projectsStared {
+          nextToken
+        }
+        skills {
+          nextToken
+        }
+        userName
+        createdAt
+        updatedAt
+      }
       createdAt
       updatedAt
     }
   }
 `;
-export const updateNote = /* GraphQL */ `
-  mutation UpdateNote(
-    $input: UpdateNoteInput!
-    $condition: ModelNoteConditionInput
+export const deleteProjectComment = /* GraphQL */ `
+  mutation DeleteProjectComment(
+    $input: DeleteProjectCommentInput!
+    $condition: ModelProjectCommentConditionInput
   ) {
-    updateNote(input: $input, condition: $condition) {
+    deleteProjectComment(input: $input, condition: $condition) {
+      content
       id
-      name
-      description
-      image
+      project {
+        categories {
+          nextToken
+        }
+        comments {
+          nextToken
+        }
+        completionDate
+        creationDate
+        description
+        id
+        likes {
+          nextToken
+        }
+        location {
+          country
+          id
+          postalCode
+          suburb
+          town
+          createdAt
+          updatedAt
+        }
+        owner {
+          description
+          email
+          id
+          userName
+          createdAt
+          updatedAt
+        }
+        participants {
+          nextToken
+        }
+        photos
+        skillsNeeded {
+          nextToken
+        }
+        stars {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      user {
+        address {
+          country
+          id
+          postalCode
+          suburb
+          town
+          createdAt
+          updatedAt
+        }
+        description
+        email
+        id
+        projectsCoop {
+          nextToken
+        }
+        projectsLiked {
+          nextToken
+        }
+        projectsOwned {
+          nextToken
+        }
+        projectsStared {
+          nextToken
+        }
+        skills {
+          nextToken
+        }
+        userName
+        createdAt
+        updatedAt
+      }
       createdAt
       updatedAt
     }
   }
 `;
-export const deleteNote = /* GraphQL */ `
-  mutation DeleteNote(
-    $input: DeleteNoteInput!
-    $condition: ModelNoteConditionInput
+export const createLocation = /* GraphQL */ `
+  mutation CreateLocation(
+    $input: CreateLocationInput!
+    $condition: ModelLocationConditionInput
   ) {
-    deleteNote(input: $input, condition: $condition) {
+    createLocation(input: $input, condition: $condition) {
+      country
+      id
+      postalCode
+      project {
+        categories {
+          nextToken
+        }
+        comments {
+          nextToken
+        }
+        completionDate
+        creationDate
+        description
+        id
+        likes {
+          nextToken
+        }
+        location {
+          country
+          id
+          postalCode
+          suburb
+          town
+          createdAt
+          updatedAt
+        }
+        owner {
+          description
+          email
+          id
+          userName
+          createdAt
+          updatedAt
+        }
+        participants {
+          nextToken
+        }
+        photos
+        skillsNeeded {
+          nextToken
+        }
+        stars {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      suburb
+      town
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const updateLocation = /* GraphQL */ `
+  mutation UpdateLocation(
+    $input: UpdateLocationInput!
+    $condition: ModelLocationConditionInput
+  ) {
+    updateLocation(input: $input, condition: $condition) {
+      country
+      id
+      postalCode
+      project {
+        categories {
+          nextToken
+        }
+        comments {
+          nextToken
+        }
+        completionDate
+        creationDate
+        description
+        id
+        likes {
+          nextToken
+        }
+        location {
+          country
+          id
+          postalCode
+          suburb
+          town
+          createdAt
+          updatedAt
+        }
+        owner {
+          description
+          email
+          id
+          userName
+          createdAt
+          updatedAt
+        }
+        participants {
+          nextToken
+        }
+        photos
+        skillsNeeded {
+          nextToken
+        }
+        stars {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      suburb
+      town
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const deleteLocation = /* GraphQL */ `
+  mutation DeleteLocation(
+    $input: DeleteLocationInput!
+    $condition: ModelLocationConditionInput
+  ) {
+    deleteLocation(input: $input, condition: $condition) {
+      country
+      id
+      postalCode
+      project {
+        categories {
+          nextToken
+        }
+        comments {
+          nextToken
+        }
+        completionDate
+        creationDate
+        description
+        id
+        likes {
+          nextToken
+        }
+        location {
+          country
+          id
+          postalCode
+          suburb
+          town
+          createdAt
+          updatedAt
+        }
+        owner {
+          description
+          email
+          id
+          userName
+          createdAt
+          updatedAt
+        }
+        participants {
+          nextToken
+        }
+        photos
+        skillsNeeded {
+          nextToken
+        }
+        stars {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      suburb
+      town
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const createProject = /* GraphQL */ `
+  mutation CreateProject(
+    $input: CreateProjectInput!
+    $condition: ModelProjectConditionInput
+  ) {
+    createProject(input: $input, condition: $condition) {
+      categories {
+        items {
+          id
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      comments {
+        items {
+          content
+          id
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      completionDate
+      creationDate
+      description
+      id
+      likes {
+        items {
+          id
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      location {
+        country
+        id
+        postalCode
+        project {
+          completionDate
+          creationDate
+          description
+          id
+          photos
+          createdAt
+          updatedAt
+        }
+        suburb
+        town
+        createdAt
+        updatedAt
+      }
+      owner {
+        address {
+          country
+          id
+          postalCode
+          suburb
+          town
+          createdAt
+          updatedAt
+        }
+        description
+        email
+        id
+        projectsCoop {
+          nextToken
+        }
+        projectsLiked {
+          nextToken
+        }
+        projectsOwned {
+          nextToken
+        }
+        projectsStared {
+          nextToken
+        }
+        skills {
+          nextToken
+        }
+        userName
+        createdAt
+        updatedAt
+      }
+      participants {
+        items {
+          id
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      photos
+      skillsNeeded {
+        items {
+          id
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      stars {
+        items {
+          id
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const updateProject = /* GraphQL */ `
+  mutation UpdateProject(
+    $input: UpdateProjectInput!
+    $condition: ModelProjectConditionInput
+  ) {
+    updateProject(input: $input, condition: $condition) {
+      categories {
+        items {
+          id
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      comments {
+        items {
+          content
+          id
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      completionDate
+      creationDate
+      description
+      id
+      likes {
+        items {
+          id
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      location {
+        country
+        id
+        postalCode
+        project {
+          completionDate
+          creationDate
+          description
+          id
+          photos
+          createdAt
+          updatedAt
+        }
+        suburb
+        town
+        createdAt
+        updatedAt
+      }
+      owner {
+        address {
+          country
+          id
+          postalCode
+          suburb
+          town
+          createdAt
+          updatedAt
+        }
+        description
+        email
+        id
+        projectsCoop {
+          nextToken
+        }
+        projectsLiked {
+          nextToken
+        }
+        projectsOwned {
+          nextToken
+        }
+        projectsStared {
+          nextToken
+        }
+        skills {
+          nextToken
+        }
+        userName
+        createdAt
+        updatedAt
+      }
+      participants {
+        items {
+          id
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      photos
+      skillsNeeded {
+        items {
+          id
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      stars {
+        items {
+          id
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const deleteProject = /* GraphQL */ `
+  mutation DeleteProject(
+    $input: DeleteProjectInput!
+    $condition: ModelProjectConditionInput
+  ) {
+    deleteProject(input: $input, condition: $condition) {
+      categories {
+        items {
+          id
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      comments {
+        items {
+          content
+          id
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      completionDate
+      creationDate
+      description
+      id
+      likes {
+        items {
+          id
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      location {
+        country
+        id
+        postalCode
+        project {
+          completionDate
+          creationDate
+          description
+          id
+          photos
+          createdAt
+          updatedAt
+        }
+        suburb
+        town
+        createdAt
+        updatedAt
+      }
+      owner {
+        address {
+          country
+          id
+          postalCode
+          suburb
+          town
+          createdAt
+          updatedAt
+        }
+        description
+        email
+        id
+        projectsCoop {
+          nextToken
+        }
+        projectsLiked {
+          nextToken
+        }
+        projectsOwned {
+          nextToken
+        }
+        projectsStared {
+          nextToken
+        }
+        skills {
+          nextToken
+        }
+        userName
+        createdAt
+        updatedAt
+      }
+      participants {
+        items {
+          id
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      photos
+      skillsNeeded {
+        items {
+          id
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      stars {
+        items {
+          id
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const createProjectLikes = /* GraphQL */ `
+  mutation CreateProjectLikes(
+    $input: CreateProjectLikesInput!
+    $condition: ModelProjectLikesConditionInput
+  ) {
+    createProjectLikes(input: $input, condition: $condition) {
+      id
+      project {
+        categories {
+          nextToken
+        }
+        comments {
+          nextToken
+        }
+        completionDate
+        creationDate
+        description
+        id
+        likes {
+          nextToken
+        }
+        location {
+          country
+          id
+          postalCode
+          suburb
+          town
+          createdAt
+          updatedAt
+        }
+        owner {
+          description
+          email
+          id
+          userName
+          createdAt
+          updatedAt
+        }
+        participants {
+          nextToken
+        }
+        photos
+        skillsNeeded {
+          nextToken
+        }
+        stars {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      user {
+        address {
+          country
+          id
+          postalCode
+          suburb
+          town
+          createdAt
+          updatedAt
+        }
+        description
+        email
+        id
+        projectsCoop {
+          nextToken
+        }
+        projectsLiked {
+          nextToken
+        }
+        projectsOwned {
+          nextToken
+        }
+        projectsStared {
+          nextToken
+        }
+        skills {
+          nextToken
+        }
+        userName
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const updateProjectLikes = /* GraphQL */ `
+  mutation UpdateProjectLikes(
+    $input: UpdateProjectLikesInput!
+    $condition: ModelProjectLikesConditionInput
+  ) {
+    updateProjectLikes(input: $input, condition: $condition) {
+      id
+      project {
+        categories {
+          nextToken
+        }
+        comments {
+          nextToken
+        }
+        completionDate
+        creationDate
+        description
+        id
+        likes {
+          nextToken
+        }
+        location {
+          country
+          id
+          postalCode
+          suburb
+          town
+          createdAt
+          updatedAt
+        }
+        owner {
+          description
+          email
+          id
+          userName
+          createdAt
+          updatedAt
+        }
+        participants {
+          nextToken
+        }
+        photos
+        skillsNeeded {
+          nextToken
+        }
+        stars {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      user {
+        address {
+          country
+          id
+          postalCode
+          suburb
+          town
+          createdAt
+          updatedAt
+        }
+        description
+        email
+        id
+        projectsCoop {
+          nextToken
+        }
+        projectsLiked {
+          nextToken
+        }
+        projectsOwned {
+          nextToken
+        }
+        projectsStared {
+          nextToken
+        }
+        skills {
+          nextToken
+        }
+        userName
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const deleteProjectLikes = /* GraphQL */ `
+  mutation DeleteProjectLikes(
+    $input: DeleteProjectLikesInput!
+    $condition: ModelProjectLikesConditionInput
+  ) {
+    deleteProjectLikes(input: $input, condition: $condition) {
+      id
+      project {
+        categories {
+          nextToken
+        }
+        comments {
+          nextToken
+        }
+        completionDate
+        creationDate
+        description
+        id
+        likes {
+          nextToken
+        }
+        location {
+          country
+          id
+          postalCode
+          suburb
+          town
+          createdAt
+          updatedAt
+        }
+        owner {
+          description
+          email
+          id
+          userName
+          createdAt
+          updatedAt
+        }
+        participants {
+          nextToken
+        }
+        photos
+        skillsNeeded {
+          nextToken
+        }
+        stars {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      user {
+        address {
+          country
+          id
+          postalCode
+          suburb
+          town
+          createdAt
+          updatedAt
+        }
+        description
+        email
+        id
+        projectsCoop {
+          nextToken
+        }
+        projectsLiked {
+          nextToken
+        }
+        projectsOwned {
+          nextToken
+        }
+        projectsStared {
+          nextToken
+        }
+        skills {
+          nextToken
+        }
+        userName
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const createProjectParticipants = /* GraphQL */ `
+  mutation CreateProjectParticipants(
+    $input: CreateProjectParticipantsInput!
+    $condition: ModelProjectParticipantsConditionInput
+  ) {
+    createProjectParticipants(input: $input, condition: $condition) {
+      id
+      project {
+        categories {
+          nextToken
+        }
+        comments {
+          nextToken
+        }
+        completionDate
+        creationDate
+        description
+        id
+        likes {
+          nextToken
+        }
+        location {
+          country
+          id
+          postalCode
+          suburb
+          town
+          createdAt
+          updatedAt
+        }
+        owner {
+          description
+          email
+          id
+          userName
+          createdAt
+          updatedAt
+        }
+        participants {
+          nextToken
+        }
+        photos
+        skillsNeeded {
+          nextToken
+        }
+        stars {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      user {
+        address {
+          country
+          id
+          postalCode
+          suburb
+          town
+          createdAt
+          updatedAt
+        }
+        description
+        email
+        id
+        projectsCoop {
+          nextToken
+        }
+        projectsLiked {
+          nextToken
+        }
+        projectsOwned {
+          nextToken
+        }
+        projectsStared {
+          nextToken
+        }
+        skills {
+          nextToken
+        }
+        userName
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const updateProjectParticipants = /* GraphQL */ `
+  mutation UpdateProjectParticipants(
+    $input: UpdateProjectParticipantsInput!
+    $condition: ModelProjectParticipantsConditionInput
+  ) {
+    updateProjectParticipants(input: $input, condition: $condition) {
+      id
+      project {
+        categories {
+          nextToken
+        }
+        comments {
+          nextToken
+        }
+        completionDate
+        creationDate
+        description
+        id
+        likes {
+          nextToken
+        }
+        location {
+          country
+          id
+          postalCode
+          suburb
+          town
+          createdAt
+          updatedAt
+        }
+        owner {
+          description
+          email
+          id
+          userName
+          createdAt
+          updatedAt
+        }
+        participants {
+          nextToken
+        }
+        photos
+        skillsNeeded {
+          nextToken
+        }
+        stars {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      user {
+        address {
+          country
+          id
+          postalCode
+          suburb
+          town
+          createdAt
+          updatedAt
+        }
+        description
+        email
+        id
+        projectsCoop {
+          nextToken
+        }
+        projectsLiked {
+          nextToken
+        }
+        projectsOwned {
+          nextToken
+        }
+        projectsStared {
+          nextToken
+        }
+        skills {
+          nextToken
+        }
+        userName
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const deleteProjectParticipants = /* GraphQL */ `
+  mutation DeleteProjectParticipants(
+    $input: DeleteProjectParticipantsInput!
+    $condition: ModelProjectParticipantsConditionInput
+  ) {
+    deleteProjectParticipants(input: $input, condition: $condition) {
+      id
+      project {
+        categories {
+          nextToken
+        }
+        comments {
+          nextToken
+        }
+        completionDate
+        creationDate
+        description
+        id
+        likes {
+          nextToken
+        }
+        location {
+          country
+          id
+          postalCode
+          suburb
+          town
+          createdAt
+          updatedAt
+        }
+        owner {
+          description
+          email
+          id
+          userName
+          createdAt
+          updatedAt
+        }
+        participants {
+          nextToken
+        }
+        photos
+        skillsNeeded {
+          nextToken
+        }
+        stars {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      user {
+        address {
+          country
+          id
+          postalCode
+          suburb
+          town
+          createdAt
+          updatedAt
+        }
+        description
+        email
+        id
+        projectsCoop {
+          nextToken
+        }
+        projectsLiked {
+          nextToken
+        }
+        projectsOwned {
+          nextToken
+        }
+        projectsStared {
+          nextToken
+        }
+        skills {
+          nextToken
+        }
+        userName
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const createProjectSkills = /* GraphQL */ `
+  mutation CreateProjectSkills(
+    $input: CreateProjectSkillsInput!
+    $condition: ModelProjectSkillsConditionInput
+  ) {
+    createProjectSkills(input: $input, condition: $condition) {
+      id
+      project {
+        categories {
+          nextToken
+        }
+        comments {
+          nextToken
+        }
+        completionDate
+        creationDate
+        description
+        id
+        likes {
+          nextToken
+        }
+        location {
+          country
+          id
+          postalCode
+          suburb
+          town
+          createdAt
+          updatedAt
+        }
+        owner {
+          description
+          email
+          id
+          userName
+          createdAt
+          updatedAt
+        }
+        participants {
+          nextToken
+        }
+        photos
+        skillsNeeded {
+          nextToken
+        }
+        stars {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      skills {
+        description
+        id
+        name
+        proficiency
+        projects {
+          nextToken
+        }
+        users {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const updateProjectSkills = /* GraphQL */ `
+  mutation UpdateProjectSkills(
+    $input: UpdateProjectSkillsInput!
+    $condition: ModelProjectSkillsConditionInput
+  ) {
+    updateProjectSkills(input: $input, condition: $condition) {
+      id
+      project {
+        categories {
+          nextToken
+        }
+        comments {
+          nextToken
+        }
+        completionDate
+        creationDate
+        description
+        id
+        likes {
+          nextToken
+        }
+        location {
+          country
+          id
+          postalCode
+          suburb
+          town
+          createdAt
+          updatedAt
+        }
+        owner {
+          description
+          email
+          id
+          userName
+          createdAt
+          updatedAt
+        }
+        participants {
+          nextToken
+        }
+        photos
+        skillsNeeded {
+          nextToken
+        }
+        stars {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      skills {
+        description
+        id
+        name
+        proficiency
+        projects {
+          nextToken
+        }
+        users {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const deleteProjectSkills = /* GraphQL */ `
+  mutation DeleteProjectSkills(
+    $input: DeleteProjectSkillsInput!
+    $condition: ModelProjectSkillsConditionInput
+  ) {
+    deleteProjectSkills(input: $input, condition: $condition) {
+      id
+      project {
+        categories {
+          nextToken
+        }
+        comments {
+          nextToken
+        }
+        completionDate
+        creationDate
+        description
+        id
+        likes {
+          nextToken
+        }
+        location {
+          country
+          id
+          postalCode
+          suburb
+          town
+          createdAt
+          updatedAt
+        }
+        owner {
+          description
+          email
+          id
+          userName
+          createdAt
+          updatedAt
+        }
+        participants {
+          nextToken
+        }
+        photos
+        skillsNeeded {
+          nextToken
+        }
+        stars {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      skills {
+        description
+        id
+        name
+        proficiency
+        projects {
+          nextToken
+        }
+        users {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const createProjectStars = /* GraphQL */ `
+  mutation CreateProjectStars(
+    $input: CreateProjectStarsInput!
+    $condition: ModelProjectStarsConditionInput
+  ) {
+    createProjectStars(input: $input, condition: $condition) {
+      id
+      project {
+        categories {
+          nextToken
+        }
+        comments {
+          nextToken
+        }
+        completionDate
+        creationDate
+        description
+        id
+        likes {
+          nextToken
+        }
+        location {
+          country
+          id
+          postalCode
+          suburb
+          town
+          createdAt
+          updatedAt
+        }
+        owner {
+          description
+          email
+          id
+          userName
+          createdAt
+          updatedAt
+        }
+        participants {
+          nextToken
+        }
+        photos
+        skillsNeeded {
+          nextToken
+        }
+        stars {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      user {
+        address {
+          country
+          id
+          postalCode
+          suburb
+          town
+          createdAt
+          updatedAt
+        }
+        description
+        email
+        id
+        projectsCoop {
+          nextToken
+        }
+        projectsLiked {
+          nextToken
+        }
+        projectsOwned {
+          nextToken
+        }
+        projectsStared {
+          nextToken
+        }
+        skills {
+          nextToken
+        }
+        userName
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const updateProjectStars = /* GraphQL */ `
+  mutation UpdateProjectStars(
+    $input: UpdateProjectStarsInput!
+    $condition: ModelProjectStarsConditionInput
+  ) {
+    updateProjectStars(input: $input, condition: $condition) {
+      id
+      project {
+        categories {
+          nextToken
+        }
+        comments {
+          nextToken
+        }
+        completionDate
+        creationDate
+        description
+        id
+        likes {
+          nextToken
+        }
+        location {
+          country
+          id
+          postalCode
+          suburb
+          town
+          createdAt
+          updatedAt
+        }
+        owner {
+          description
+          email
+          id
+          userName
+          createdAt
+          updatedAt
+        }
+        participants {
+          nextToken
+        }
+        photos
+        skillsNeeded {
+          nextToken
+        }
+        stars {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      user {
+        address {
+          country
+          id
+          postalCode
+          suburb
+          town
+          createdAt
+          updatedAt
+        }
+        description
+        email
+        id
+        projectsCoop {
+          nextToken
+        }
+        projectsLiked {
+          nextToken
+        }
+        projectsOwned {
+          nextToken
+        }
+        projectsStared {
+          nextToken
+        }
+        skills {
+          nextToken
+        }
+        userName
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const deleteProjectStars = /* GraphQL */ `
+  mutation DeleteProjectStars(
+    $input: DeleteProjectStarsInput!
+    $condition: ModelProjectStarsConditionInput
+  ) {
+    deleteProjectStars(input: $input, condition: $condition) {
+      id
+      project {
+        categories {
+          nextToken
+        }
+        comments {
+          nextToken
+        }
+        completionDate
+        creationDate
+        description
+        id
+        likes {
+          nextToken
+        }
+        location {
+          country
+          id
+          postalCode
+          suburb
+          town
+          createdAt
+          updatedAt
+        }
+        owner {
+          description
+          email
+          id
+          userName
+          createdAt
+          updatedAt
+        }
+        participants {
+          nextToken
+        }
+        photos
+        skillsNeeded {
+          nextToken
+        }
+        stars {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      user {
+        address {
+          country
+          id
+          postalCode
+          suburb
+          town
+          createdAt
+          updatedAt
+        }
+        description
+        email
+        id
+        projectsCoop {
+          nextToken
+        }
+        projectsLiked {
+          nextToken
+        }
+        projectsOwned {
+          nextToken
+        }
+        projectsStared {
+          nextToken
+        }
+        skills {
+          nextToken
+        }
+        userName
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const createSkill = /* GraphQL */ `
+  mutation CreateSkill(
+    $input: CreateSkillInput!
+    $condition: ModelSkillConditionInput
+  ) {
+    createSkill(input: $input, condition: $condition) {
+      description
       id
       name
+      proficiency
+      projects {
+        items {
+          id
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      users {
+        items {
+          id
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const updateSkill = /* GraphQL */ `
+  mutation UpdateSkill(
+    $input: UpdateSkillInput!
+    $condition: ModelSkillConditionInput
+  ) {
+    updateSkill(input: $input, condition: $condition) {
       description
-      image
+      id
+      name
+      proficiency
+      projects {
+        items {
+          id
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      users {
+        items {
+          id
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const deleteSkill = /* GraphQL */ `
+  mutation DeleteSkill(
+    $input: DeleteSkillInput!
+    $condition: ModelSkillConditionInput
+  ) {
+    deleteSkill(input: $input, condition: $condition) {
+      description
+      id
+      name
+      proficiency
+      projects {
+        items {
+          id
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      users {
+        items {
+          id
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const createUser = /* GraphQL */ `
+  mutation CreateUser(
+    $input: CreateUserInput!
+    $condition: ModelUserConditionInput
+  ) {
+    createUser(input: $input, condition: $condition) {
+      address {
+        country
+        id
+        postalCode
+        suburb
+        town
+        user {
+          description
+          email
+          id
+          userName
+          createdAt
+          updatedAt
+        }
+        createdAt
+        updatedAt
+      }
+      description
+      email
+      id
+      projectsCoop {
+        items {
+          id
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      projectsLiked {
+        items {
+          id
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      projectsOwned {
+        items {
+          completionDate
+          creationDate
+          description
+          id
+          photos
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      projectsStared {
+        items {
+          id
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      skills {
+        items {
+          id
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      userName
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const updateUser = /* GraphQL */ `
+  mutation UpdateUser(
+    $input: UpdateUserInput!
+    $condition: ModelUserConditionInput
+  ) {
+    updateUser(input: $input, condition: $condition) {
+      address {
+        country
+        id
+        postalCode
+        suburb
+        town
+        user {
+          description
+          email
+          id
+          userName
+          createdAt
+          updatedAt
+        }
+        createdAt
+        updatedAt
+      }
+      description
+      email
+      id
+      projectsCoop {
+        items {
+          id
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      projectsLiked {
+        items {
+          id
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      projectsOwned {
+        items {
+          completionDate
+          creationDate
+          description
+          id
+          photos
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      projectsStared {
+        items {
+          id
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      skills {
+        items {
+          id
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      userName
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const deleteUser = /* GraphQL */ `
+  mutation DeleteUser(
+    $input: DeleteUserInput!
+    $condition: ModelUserConditionInput
+  ) {
+    deleteUser(input: $input, condition: $condition) {
+      address {
+        country
+        id
+        postalCode
+        suburb
+        town
+        user {
+          description
+          email
+          id
+          userName
+          createdAt
+          updatedAt
+        }
+        createdAt
+        updatedAt
+      }
+      description
+      email
+      id
+      projectsCoop {
+        items {
+          id
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      projectsLiked {
+        items {
+          id
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      projectsOwned {
+        items {
+          completionDate
+          creationDate
+          description
+          id
+          photos
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      projectsStared {
+        items {
+          id
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      skills {
+        items {
+          id
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      userName
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const createUserSkills = /* GraphQL */ `
+  mutation CreateUserSkills(
+    $input: CreateUserSkillsInput!
+    $condition: ModelUserSkillsConditionInput
+  ) {
+    createUserSkills(input: $input, condition: $condition) {
+      id
+      skill {
+        description
+        id
+        name
+        proficiency
+        projects {
+          nextToken
+        }
+        users {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      user {
+        address {
+          country
+          id
+          postalCode
+          suburb
+          town
+          createdAt
+          updatedAt
+        }
+        description
+        email
+        id
+        projectsCoop {
+          nextToken
+        }
+        projectsLiked {
+          nextToken
+        }
+        projectsOwned {
+          nextToken
+        }
+        projectsStared {
+          nextToken
+        }
+        skills {
+          nextToken
+        }
+        userName
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const updateUserSkills = /* GraphQL */ `
+  mutation UpdateUserSkills(
+    $input: UpdateUserSkillsInput!
+    $condition: ModelUserSkillsConditionInput
+  ) {
+    updateUserSkills(input: $input, condition: $condition) {
+      id
+      skill {
+        description
+        id
+        name
+        proficiency
+        projects {
+          nextToken
+        }
+        users {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      user {
+        address {
+          country
+          id
+          postalCode
+          suburb
+          town
+          createdAt
+          updatedAt
+        }
+        description
+        email
+        id
+        projectsCoop {
+          nextToken
+        }
+        projectsLiked {
+          nextToken
+        }
+        projectsOwned {
+          nextToken
+        }
+        projectsStared {
+          nextToken
+        }
+        skills {
+          nextToken
+        }
+        userName
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const deleteUserSkills = /* GraphQL */ `
+  mutation DeleteUserSkills(
+    $input: DeleteUserSkillsInput!
+    $condition: ModelUserSkillsConditionInput
+  ) {
+    deleteUserSkills(input: $input, condition: $condition) {
+      id
+      skill {
+        description
+        id
+        name
+        proficiency
+        projects {
+          nextToken
+        }
+        users {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      user {
+        address {
+          country
+          id
+          postalCode
+          suburb
+          town
+          createdAt
+          updatedAt
+        }
+        description
+        email
+        id
+        projectsCoop {
+          nextToken
+        }
+        projectsLiked {
+          nextToken
+        }
+        projectsOwned {
+          nextToken
+        }
+        projectsStared {
+          nextToken
+        }
+        skills {
+          nextToken
+        }
+        userName
+        createdAt
+        updatedAt
+      }
       createdAt
       updatedAt
     }

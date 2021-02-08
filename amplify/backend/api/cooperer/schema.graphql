@@ -18,15 +18,6 @@
 #  post: Post @connection(fields: ["postID"])
 #  content: String!
 #}
-#
-#type Note @model {
-#  id: ID!
-#  name: String!
-#  description: String
-#  image: String
-#}
-
-scalar Date
 
 type Address @model {
   country: String!
@@ -42,7 +33,7 @@ type Category @model {
   id: ID!
   image: String!
   name: String!
-  projects: [CategoryProject] @connection(name: "CategoryProject")
+  projects: [CategoryProject] @connection(name: "CategoryProjects")
 }
 
 type CategoryProject @model(queries: null) {
@@ -51,7 +42,7 @@ type CategoryProject @model(queries: null) {
   project: Project! @connection(name: "ProjectCategories")
 }
 
-type Comment @model {
+type ProjectComment @model {
   content: String!
   id: ID!
   project: Project @connection(name: "ProjectComments")
@@ -69,46 +60,42 @@ type Location @model {
 
 type Project @model {
   categories: [CategoryProject] @connection(name: "ProjectCategories")
-  comments: [Comment] @connection(name: "ProjectComments")
-  completionDate: Date
-  creationDate: Date!
+  comments: [ProjectComment] @connection(name: "ProjectComments")
+  completionDate: AWSDateTime
+  creationDate: AWSDateTime!
   description: String!
   id: ID!
-  likes: [User] @connection(name: "ProjectLikes")
+  likes: [ProjectLikes] @connection(name: "ProjectLikes")
   location: Location!
   owner: User @connection(name: "ProjectOwner")
-  participants: [User] @connection(name: "ProjectParticipants")
+  participants: [ProjectParticipants] @connection(name: "ProjectParticipants")
   photos: [String]
-  skillsNeeded: [Skill] @connection(name: "ProjectSkills")
-  stars: [User] @connection(name: "ProjectStars")
+  skillsNeeded: [ProjectSkills] @connection(name: "ProjectSkills")
+  stars: [ProjectStars] @connection(name: "ProjectStars")
 }
 
-# todo
 type ProjectLikes @model(queries: null) {
   id: ID!
-  project: Project! @connection(name: "ProjectCategories")
-  user: Category! @connection(name: "CategoryProjects")
+  project: Project! @connection(name: "ProjectLikes")
+  user: User! @connection(name: "LikeProjects")
 }
 
-# todo
 type ProjectParticipants @model(queries: null) {
   id: ID!
-  project: Project! @connection(name: "ProjectCategories")
-  user: Category! @connection(name: "CategoryProjects")
+  project: Project! @connection(name: "ProjectParticipants")
+  user: User! @connection(name: "ParticipantProjects")
 }
 
-# todo
 type ProjectSkills @model(queries: null) {
   id: ID!
-  project: Project! @connection(name: "ProjectCategories")
-  skills: Category! @connection(name: "CategoryProjects")
+  project: Project! @connection(name: "ProjectSkills")
+  skills: Skill! @connection(name: "SkillProjects")
 }
 
-# todo
 type ProjectStars @model(queries: null) {
   id: ID!
-  project: Project! @connection(name: "ProjectCategories")
-  user: Category! @connection(name: "CategoryProjects")
+  project: Project! @connection(name: "ProjectStars")
+  user: User! @connection(name: "StarProjects")
 }
 
 type Skill @model {
@@ -116,8 +103,8 @@ type Skill @model {
   id: ID!
   name: String!
   proficiency: String!
-  projects: [Project] @connection(name: "ProjectSkills")
-  users: [User] @connection(name: "UserSkills")
+  projects: [ProjectSkills] @connection(name: "SkillProjects")
+  users: [UserSkills] @connection(name: "UserSkills")
 }
 
 type User @model {
@@ -125,10 +112,16 @@ type User @model {
   description: String!
   email: String!
   id: ID!
-  projectsCoop: [Project] @connection(name: "ProjectParticipants")
-  projectsLiked: [Project] @connection(name: "ProjectLikes")
+  projectsCoop: [ProjectParticipants] @connection(name: "ParticipantProjects")
+  projectsLiked: [ProjectLikes] @connection(name: "LikeProjects")
   projectsOwned: [Project] @connection(name: "ProjectOwner")
-  projectsStared: [Project] @connection(name: "ProjectStars")
-  skills: [Skill] @connection(name: "UserSkills")
+  projectsStared: [ProjectStars] @connection(name: "StarProjects")
+  skills: [UserSkills] @connection(name: "SkillUsers")
   userName: String!
+}
+
+type UserSkills @model(queries: null) {
+  id: ID!
+  skill: Skill! @connection(name: "UserSkills")
+  user: User! @connection(name: "SkillUsers")
 }
