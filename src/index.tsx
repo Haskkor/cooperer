@@ -1,17 +1,22 @@
 import Amplify from 'aws-amplify';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { QueryClient, QueryClientProvider } from 'react-query';
 
 import App from './App';
 import config from './aws-exports';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 
-Amplify.configure(config)
+Amplify.configure(config);
+
+const queryClient = new QueryClient();
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <QueryClientProvider client={queryClient}>
+      <App />
+    </QueryClientProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

@@ -13,7 +13,7 @@ const useProjects = () => {
     }
   );
 
-  const projects = data.listProjects.items;
+  const projects = data ? data.listProjects.items : [];
 
   return {
     error,
