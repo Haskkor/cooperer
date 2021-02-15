@@ -2,17 +2,13 @@ import { AmplifySignOut, withAuthenticator } from '@aws-amplify/ui-react';
 import React from 'react';
 
 import './App.css';
-import useProjects from './hooks/projects/useProjects/useProjects';
+import Projects from './pages/projects/Projects';
 
-function App() {
-  const { projects, error, isLoading } = useProjects();
-  console.log('DATA', projects, error, isLoading)
-
-  return (
-    <div className="App">
-      <AmplifySignOut />
-    </div>
-  );
-}
+const App = () => (
+  <div className="App">
+    <Projects />
+    <AmplifySignOut />
+  </div>
+);
 
 export default withAuthenticator(App);
