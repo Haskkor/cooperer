@@ -1,29 +1,30 @@
 import React, { useState } from 'react';
 
-import './App.css';
+import { createProject as createProjectMutation } from '../../graphql/mutations';
 import useProjects from '../../hooks/projects/useProjects/useProjects';
-import { Storage } from 'aws-amplify';
 
-const initialFormState = { name: '', description: '', image: '' as Object | string }
+const initialCreationFormState = { completionDate: new Date(), description: '', photos: [] }
+
+// input CreateProjectInput {
+//   completionDate: AWSDateTime
+//   creationDate: AWSDateTime!
+//   description: String!
+//   id: ID
+//   photos: [String]
+//   projectOwnerId: ID
+// }
 
 const Projects = () => {
   const [showCreate, setShowCreate] = useState(false)
-  const [formData, setFormData] = useState(initialFormState);
+  const [formData, setFormData] = useState(initialCreationFormState);
   const { projects, error, isLoading } = useProjects();
 
   if (error) return <div>error</div>
   if (isLoading) return <div>loading</div>
 
-  // fixme any
-  const onChange = (e: any) => {
-    if (!e.target.files[0]) return
-    const file = e.target.files[0];
-    setFormData({ ...formData, image: file.name });
-  }
-
   const createNote = () => {
     if (!formData.name || !formData.description) return;
-    setFormData(initialFormState);
+    setFormData(formData);
   }
 
   // fixme any
@@ -42,10 +43,6 @@ const Projects = () => {
           onChange={e => setFormData({ ...formData, 'description': e.target.value })}
           placeholder="Note description"
           value={formData.description}
-        />
-        <input
-          type="file"
-          onChange={onChange}
         />
         <button onClick={createNote}>Create Note</button>
       </>
