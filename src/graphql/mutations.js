@@ -255,6 +255,7 @@ export const createCategoryProject = /* GraphQL */ `
           createdAt
           updatedAt
         }
+        name
         owner {
           description
           email
@@ -322,6 +323,7 @@ export const updateCategoryProject = /* GraphQL */ `
           createdAt
           updatedAt
         }
+        name
         owner {
           description
           email
@@ -389,6 +391,7 @@ export const deleteCategoryProject = /* GraphQL */ `
           createdAt
           updatedAt
         }
+        name
         owner {
           description
           email
@@ -446,6 +449,7 @@ export const createProjectComment = /* GraphQL */ `
           createdAt
           updatedAt
         }
+        name
         owner {
           description
           email
@@ -467,6 +471,7 @@ export const createProjectComment = /* GraphQL */ `
         createdAt
         updatedAt
       }
+      title
       user {
         address {
           country
@@ -535,6 +540,7 @@ export const updateProjectComment = /* GraphQL */ `
           createdAt
           updatedAt
         }
+        name
         owner {
           description
           email
@@ -556,6 +562,7 @@ export const updateProjectComment = /* GraphQL */ `
         createdAt
         updatedAt
       }
+      title
       user {
         address {
           country
@@ -624,6 +631,7 @@ export const deleteProjectComment = /* GraphQL */ `
           createdAt
           updatedAt
         }
+        name
         owner {
           description
           email
@@ -645,6 +653,7 @@ export const deleteProjectComment = /* GraphQL */ `
         createdAt
         updatedAt
       }
+      title
       user {
         address {
           country
@@ -714,6 +723,7 @@ export const createLocation = /* GraphQL */ `
           createdAt
           updatedAt
         }
+        name
         owner {
           description
           email
@@ -774,6 +784,7 @@ export const updateLocation = /* GraphQL */ `
           createdAt
           updatedAt
         }
+        name
         owner {
           description
           email
@@ -834,6 +845,7 @@ export const deleteLocation = /* GraphQL */ `
           createdAt
           updatedAt
         }
+        name
         owner {
           description
           email
@@ -880,6 +892,7 @@ export const createProject = /* GraphQL */ `
         items {
           content
           id
+          title
           createdAt
           updatedAt
         }
@@ -906,6 +919,7 @@ export const createProject = /* GraphQL */ `
           creationDate
           description
           id
+          name
           photos
           createdAt
           updatedAt
@@ -915,6 +929,7 @@ export const createProject = /* GraphQL */ `
         createdAt
         updatedAt
       }
+      name
       owner {
         address {
           country
@@ -995,6 +1010,7 @@ export const updateProject = /* GraphQL */ `
         items {
           content
           id
+          title
           createdAt
           updatedAt
         }
@@ -1021,6 +1037,7 @@ export const updateProject = /* GraphQL */ `
           creationDate
           description
           id
+          name
           photos
           createdAt
           updatedAt
@@ -1030,6 +1047,7 @@ export const updateProject = /* GraphQL */ `
         createdAt
         updatedAt
       }
+      name
       owner {
         address {
           country
@@ -1110,6 +1128,7 @@ export const deleteProject = /* GraphQL */ `
         items {
           content
           id
+          title
           createdAt
           updatedAt
         }
@@ -1136,6 +1155,7 @@ export const deleteProject = /* GraphQL */ `
           creationDate
           description
           id
+          name
           photos
           createdAt
           updatedAt
@@ -1145,6 +1165,7 @@ export const deleteProject = /* GraphQL */ `
         createdAt
         updatedAt
       }
+      name
       owner {
         address {
           country
@@ -1237,6 +1258,7 @@ export const createProjectLikes = /* GraphQL */ `
           createdAt
           updatedAt
         }
+        name
         owner {
           description
           email
@@ -1325,6 +1347,7 @@ export const updateProjectLikes = /* GraphQL */ `
           createdAt
           updatedAt
         }
+        name
         owner {
           description
           email
@@ -1413,6 +1436,7 @@ export const deleteProjectLikes = /* GraphQL */ `
           createdAt
           updatedAt
         }
+        name
         owner {
           description
           email
@@ -1501,6 +1525,7 @@ export const createProjectParticipants = /* GraphQL */ `
           createdAt
           updatedAt
         }
+        name
         owner {
           description
           email
@@ -1589,6 +1614,7 @@ export const updateProjectParticipants = /* GraphQL */ `
           createdAt
           updatedAt
         }
+        name
         owner {
           description
           email
@@ -1677,6 +1703,7 @@ export const deleteProjectParticipants = /* GraphQL */ `
           createdAt
           updatedAt
         }
+        name
         owner {
           description
           email
@@ -1765,6 +1792,7 @@ export const createProjectSkills = /* GraphQL */ `
           createdAt
           updatedAt
         }
+        name
         owner {
           description
           email
@@ -1835,6 +1863,7 @@ export const updateProjectSkills = /* GraphQL */ `
           createdAt
           updatedAt
         }
+        name
         owner {
           description
           email
@@ -1905,6 +1934,7 @@ export const deleteProjectSkills = /* GraphQL */ `
           createdAt
           updatedAt
         }
+        name
         owner {
           description
           email
@@ -1975,6 +2005,7 @@ export const createProjectStars = /* GraphQL */ `
           createdAt
           updatedAt
         }
+        name
         owner {
           description
           email
@@ -2063,6 +2094,7 @@ export const updateProjectStars = /* GraphQL */ `
           createdAt
           updatedAt
         }
+        name
         owner {
           description
           email
@@ -2151,6 +2183,7 @@ export const deleteProjectStars = /* GraphQL */ `
           createdAt
           updatedAt
         }
+        name
         owner {
           description
           email
@@ -2350,6 +2383,7 @@ export const createUser = /* GraphQL */ `
           creationDate
           description
           id
+          name
           photos
           createdAt
           updatedAt
@@ -2426,6 +2460,7 @@ export const updateUser = /* GraphQL */ `
           creationDate
           description
           id
+          name
           photos
           createdAt
           updatedAt
@@ -2502,6 +2537,7 @@ export const deleteUser = /* GraphQL */ `
           creationDate
           description
           id
+          name
           photos
           createdAt
           updatedAt

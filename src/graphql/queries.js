@@ -144,6 +144,7 @@ export const getProjectComment = /* GraphQL */ `
           createdAt
           updatedAt
         }
+        name
         owner {
           description
           email
@@ -165,6 +166,7 @@ export const getProjectComment = /* GraphQL */ `
         createdAt
         updatedAt
       }
+      title
       user {
         address {
           country
@@ -217,10 +219,12 @@ export const listProjectComments = /* GraphQL */ `
           creationDate
           description
           id
+          name
           photos
           createdAt
           updatedAt
         }
+        title
         user {
           description
           email
@@ -265,6 +269,7 @@ export const getLocation = /* GraphQL */ `
           createdAt
           updatedAt
         }
+        name
         owner {
           description
           email
@@ -309,6 +314,7 @@ export const listLocations = /* GraphQL */ `
           creationDate
           description
           id
+          name
           photos
           createdAt
           updatedAt
@@ -337,6 +343,7 @@ export const getProject = /* GraphQL */ `
         items {
           content
           id
+          title
           createdAt
           updatedAt
         }
@@ -363,6 +370,7 @@ export const getProject = /* GraphQL */ `
           creationDate
           description
           id
+          name
           photos
           createdAt
           updatedAt
@@ -372,6 +380,7 @@ export const getProject = /* GraphQL */ `
         createdAt
         updatedAt
       }
+      name
       owner {
         address {
           country
@@ -464,6 +473,7 @@ export const listProjects = /* GraphQL */ `
           createdAt
           updatedAt
         }
+        name
         owner {
           description
           email
@@ -587,6 +597,7 @@ export const getUser = /* GraphQL */ `
           creationDate
           description
           id
+          name
           photos
           createdAt
           updatedAt

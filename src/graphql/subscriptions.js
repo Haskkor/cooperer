@@ -234,6 +234,7 @@ export const onCreateCategoryProject = /* GraphQL */ `
           createdAt
           updatedAt
         }
+        name
         owner {
           description
           email
@@ -298,6 +299,7 @@ export const onUpdateCategoryProject = /* GraphQL */ `
           createdAt
           updatedAt
         }
+        name
         owner {
           description
           email
@@ -362,6 +364,7 @@ export const onDeleteCategoryProject = /* GraphQL */ `
           createdAt
           updatedAt
         }
+        name
         owner {
           description
           email
@@ -416,6 +419,7 @@ export const onCreateProjectComment = /* GraphQL */ `
           createdAt
           updatedAt
         }
+        name
         owner {
           description
           email
@@ -437,6 +441,7 @@ export const onCreateProjectComment = /* GraphQL */ `
         createdAt
         updatedAt
       }
+      title
       user {
         address {
           country
@@ -502,6 +507,7 @@ export const onUpdateProjectComment = /* GraphQL */ `
           createdAt
           updatedAt
         }
+        name
         owner {
           description
           email
@@ -523,6 +529,7 @@ export const onUpdateProjectComment = /* GraphQL */ `
         createdAt
         updatedAt
       }
+      title
       user {
         address {
           country
@@ -588,6 +595,7 @@ export const onDeleteProjectComment = /* GraphQL */ `
           createdAt
           updatedAt
         }
+        name
         owner {
           description
           email
@@ -609,6 +617,7 @@ export const onDeleteProjectComment = /* GraphQL */ `
         createdAt
         updatedAt
       }
+      title
       user {
         address {
           country
@@ -675,6 +684,7 @@ export const onCreateLocation = /* GraphQL */ `
           createdAt
           updatedAt
         }
+        name
         owner {
           description
           email
@@ -732,6 +742,7 @@ export const onUpdateLocation = /* GraphQL */ `
           createdAt
           updatedAt
         }
+        name
         owner {
           description
           email
@@ -789,6 +800,7 @@ export const onDeleteLocation = /* GraphQL */ `
           createdAt
           updatedAt
         }
+        name
         owner {
           description
           email
@@ -832,6 +844,7 @@ export const onCreateProject = /* GraphQL */ `
         items {
           content
           id
+          title
           createdAt
           updatedAt
         }
@@ -858,6 +871,7 @@ export const onCreateProject = /* GraphQL */ `
           creationDate
           description
           id
+          name
           photos
           createdAt
           updatedAt
@@ -867,6 +881,7 @@ export const onCreateProject = /* GraphQL */ `
         createdAt
         updatedAt
       }
+      name
       owner {
         address {
           country
@@ -944,6 +959,7 @@ export const onUpdateProject = /* GraphQL */ `
         items {
           content
           id
+          title
           createdAt
           updatedAt
         }
@@ -970,6 +986,7 @@ export const onUpdateProject = /* GraphQL */ `
           creationDate
           description
           id
+          name
           photos
           createdAt
           updatedAt
@@ -979,6 +996,7 @@ export const onUpdateProject = /* GraphQL */ `
         createdAt
         updatedAt
       }
+      name
       owner {
         address {
           country
@@ -1056,6 +1074,7 @@ export const onDeleteProject = /* GraphQL */ `
         items {
           content
           id
+          title
           createdAt
           updatedAt
         }
@@ -1082,6 +1101,7 @@ export const onDeleteProject = /* GraphQL */ `
           creationDate
           description
           id
+          name
           photos
           createdAt
           updatedAt
@@ -1091,6 +1111,7 @@ export const onDeleteProject = /* GraphQL */ `
         createdAt
         updatedAt
       }
+      name
       owner {
         address {
           country
@@ -1180,6 +1201,7 @@ export const onCreateProjectLikes = /* GraphQL */ `
           createdAt
           updatedAt
         }
+        name
         owner {
           description
           email
@@ -1265,6 +1287,7 @@ export const onUpdateProjectLikes = /* GraphQL */ `
           createdAt
           updatedAt
         }
+        name
         owner {
           description
           email
@@ -1350,6 +1373,7 @@ export const onDeleteProjectLikes = /* GraphQL */ `
           createdAt
           updatedAt
         }
+        name
         owner {
           description
           email
@@ -1435,6 +1459,7 @@ export const onCreateProjectParticipants = /* GraphQL */ `
           createdAt
           updatedAt
         }
+        name
         owner {
           description
           email
@@ -1520,6 +1545,7 @@ export const onUpdateProjectParticipants = /* GraphQL */ `
           createdAt
           updatedAt
         }
+        name
         owner {
           description
           email
@@ -1605,6 +1631,7 @@ export const onDeleteProjectParticipants = /* GraphQL */ `
           createdAt
           updatedAt
         }
+        name
         owner {
           description
           email
@@ -1690,6 +1717,7 @@ export const onCreateProjectSkills = /* GraphQL */ `
           createdAt
           updatedAt
         }
+        name
         owner {
           description
           email
@@ -1757,6 +1785,7 @@ export const onUpdateProjectSkills = /* GraphQL */ `
           createdAt
           updatedAt
         }
+        name
         owner {
           description
           email
@@ -1824,6 +1853,7 @@ export const onDeleteProjectSkills = /* GraphQL */ `
           createdAt
           updatedAt
         }
+        name
         owner {
           description
           email
@@ -1891,6 +1921,7 @@ export const onCreateProjectStars = /* GraphQL */ `
           createdAt
           updatedAt
         }
+        name
         owner {
           description
           email
@@ -1976,6 +2007,7 @@ export const onUpdateProjectStars = /* GraphQL */ `
           createdAt
           updatedAt
         }
+        name
         owner {
           description
           email
@@ -2061,6 +2093,7 @@ export const onDeleteProjectStars = /* GraphQL */ `
           createdAt
           updatedAt
         }
+        name
         owner {
           description
           email
@@ -2248,6 +2281,7 @@ export const onCreateUser = /* GraphQL */ `
           creationDate
           description
           id
+          name
           photos
           createdAt
           updatedAt
@@ -2321,6 +2355,7 @@ export const onUpdateUser = /* GraphQL */ `
           creationDate
           description
           id
+          name
           photos
           createdAt
           updatedAt
@@ -2394,6 +2429,7 @@ export const onDeleteUser = /* GraphQL */ `
           creationDate
           description
           id
+          name
           photos
           createdAt
           updatedAt

@@ -2,17 +2,13 @@ import React, { useState } from 'react';
 
 import { createProject as createProjectMutation } from '../../graphql/mutations';
 import useProjects from '../../hooks/projects/useProjects/useProjects';
+import { API } from 'aws-amplify';
 
-const initialCreationFormState = { completionDate: new Date(), description: '', photos: [] }
-
-// input CreateProjectInput {
-//   completionDate: AWSDateTime
-//   creationDate: AWSDateTime!
-//   description: String!
-//   id: ID
-//   photos: [String]
-//   projectOwnerId: ID
-// }
+const initialCreationFormState = {
+  creationDate: new Date(),
+  description: '',
+  photos: []
+}
 
 const Projects = () => {
   const [showCreate, setShowCreate] = useState(false)
@@ -22,29 +18,25 @@ const Projects = () => {
   if (error) return <div>error</div>
   if (isLoading) return <div>loading</div>
 
-  const createNote = () => {
-    if (!formData.name || !formData.description) return;
-    setFormData(formData);
+  const createProject = async () => {
+    if (!formData.description) return;
+    setFormData(initialCreationFormState);
+    await API.graphql({ query: createProjectMutation, variables: { input: formData } });
   }
 
   // fixme any
   return (
-    <div className="App">
-      <button onClick={() => setShowCreate(true)}>Add project</button>
+    <div>
+      {!showCreate && <button onClick={() => setShowCreate(true)}>Add project</button>}
       {projects.map((p: any) => <div>{p.name}</div>)}
       {showCreate &&
       <>
         <input
-          onChange={e => setFormData({ ...formData, 'name': e.target.value })}
-          placeholder="Note name"
-          value={formData.name}
-        />
-        <input
-          onChange={e => setFormData({ ...formData, 'description': e.target.value })}
-          placeholder="Note description"
+          onChange={e => setFormData({ ...formData, description: e.target.value })}
+          placeholder="Project description"
           value={formData.description}
         />
-        <button onClick={createNote}>Create Note</button>
+        <button onClick={createProject}>Create Project</button>
       </>
       }
     </div>

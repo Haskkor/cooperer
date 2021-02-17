@@ -10,7 +10,7 @@ type Address @model {
 type Category @model {
   description: String!
   id: ID!
-  image: String!
+  image: String
   name: String!
   projects: [CategoryProject] @connection(name: "CategoryProjects")
 }
@@ -24,7 +24,8 @@ type CategoryProject @model(queries: null) {
 type ProjectComment @model {
   content: String!
   id: ID!
-  project: Project @connection(name: "ProjectComments")
+  project: Project! @connection(name: "ProjectComments")
+  title: String!
   user: User!
 }
 
@@ -38,7 +39,7 @@ type Location @model {
 }
 
 type Project @model {
-  categories: [CategoryProject] @connection(name: "ProjectCategories")
+  categories: [CategoryProject]! @connection(name: "ProjectCategories")
   comments: [ProjectComment] @connection(name: "ProjectComments")
   completionDate: AWSDateTime
   creationDate: AWSDateTime!
@@ -46,7 +47,8 @@ type Project @model {
   id: ID!
   likes: [ProjectLikes] @connection(name: "ProjectLikes")
   location: Location!
-  owner: User @connection(name: "ProjectOwner")
+  name: String!
+  owner: User! @connection(name: "ProjectOwner")
   participants: [ProjectParticipants] @connection(name: "ProjectParticipants")
   photos: [String]
   skillsNeeded: [ProjectSkills] @connection(name: "ProjectSkills")
@@ -88,7 +90,7 @@ type Skill @model {
 
 type User @model {
   address: Address!
-  description: String!
+  description: String
   email: String!
   id: ID!
   projectsCoop: [ProjectParticipants] @connection(name: "ParticipantProjects")
