@@ -1,12 +1,12 @@
 import { API, graphqlOperation } from 'aws-amplify';
 import { useQuery } from 'react-query';
 
-import { listProjects } from '../../../graphql/queries';
-import { Project } from '../../../types/project';
+import { listCategorys } from '../../../graphql/queries';
+import { Category } from '../../../types/category';
 
 interface Data {
-  listProjects: {
-    items: Project[]
+  listCategorys: {
+    items: Category[]
   }
 }
 
@@ -15,17 +15,17 @@ const useProjects = () => {
   const { data, isLoading, refetch, error } = useQuery(
     ['post'],
     async () => {
-      const result: any = await API.graphql(graphqlOperation(listProjects));
+      const result: any = await API.graphql(graphqlOperation(listCategorys));
       return result.data as Data;
     }
   );
 
-  const projects = data ? data.listProjects.items : [];
+  const categories = data ? data.listCategorys.items : [];
 
   return {
+    categories,
     error,
     isLoading,
-    projects,
     refetch
   }
 };

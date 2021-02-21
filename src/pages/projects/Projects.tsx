@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { createProject as createProjectMutation } from '../../graphql/mutations';
 import useProjects from '../../hooks/projects/useProjects/useProjects';
 import { API } from 'aws-amplify';
+import { Project } from '../../types/project';
 
 const initialCreationFormState = {
   creationDate: new Date(),
@@ -24,11 +25,10 @@ const Projects = () => {
     await API.graphql({ query: createProjectMutation, variables: { input: formData } });
   }
 
-  // fixme any
   return (
     <div>
       {!showCreate && <button onClick={() => setShowCreate(true)}>Add project</button>}
-      {projects.map((p: any) => <div>{p.name}</div>)}
+      {projects.map((p: Project) => <div>{p.name}</div>)}
       {showCreate &&
       <>
         <input
