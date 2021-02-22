@@ -1,33 +1,33 @@
 import { API, graphqlOperation } from 'aws-amplify';
 import { useQuery } from 'react-query';
 
-import { listCategorys } from '../../../graphql/queries';
+import { getCategory } from '../../../graphql/queries';
 import { Category } from '../../../types/category';
 
 interface Data {
-  listCategorys: {
-    items: Category[]
+  getCategory: {
+    item: Category
   }
 }
 
-const useCategories = () => {
+const useCategory = (id: string) => {
 
   const { data, isLoading, refetch, error } = useQuery(
     ['post'],
     async () => {
-      const result: any = await API.graphql(graphqlOperation(listCategorys));
+      const result: any = await API.graphql(graphqlOperation(getCategory, { id }));
       return result.data as Data;
     }
   );
 
-  const categories = data ? data.listCategorys.items : [];
+  const category = data ? data.getCategory.item : [];
 
   return {
-    categories,
+    category,
     error,
     isLoading,
     refetch
   }
 };
 
-export default useCategories;
+export default useCategory;

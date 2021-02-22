@@ -1,33 +1,33 @@
 import { API, graphqlOperation } from 'aws-amplify';
 import { useQuery } from 'react-query';
 
-import { listSkills } from '../../../graphql/queries';
+import { getSkill } from '../../../graphql/queries';
 import { Skill } from '../../../types/skill';
 
 interface Data {
-  listSkills: {
-    items: Skill[]
+  getSkill: {
+    item: Skill
   }
 }
 
-const useSkills = () => {
+const useSkill = (id: string) => {
 
   const { data, isLoading, refetch, error } = useQuery(
     ['post'],
     async () => {
-      const result: any = await API.graphql(graphqlOperation(listSkills));
+      const result: any = await API.graphql(graphqlOperation(getSkill, { id }));
       return result.data as Data;
     }
   );
 
-  const skills = data ? data.listSkills.items : [];
+  const skill = data ? data.getSkill.item : [];
 
   return {
     error,
     isLoading,
     refetch,
-    skills
+    skill
   }
 };
 
-export default useSkills;
+export default useSkill;

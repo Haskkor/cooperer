@@ -1,33 +1,33 @@
 import { API, graphqlOperation } from 'aws-amplify';
 import { useQuery } from 'react-query';
 
-import { listUsers } from '../../../graphql/queries';
+import { getUser } from '../../../graphql/queries';
 import { User } from '../../../types/user';
 
 interface Data {
-  listUsers: {
-    items: User[]
+  getUser: {
+    item: User;
   }
 }
 
-const useUsers = () => {
+const useUser = (id: string) => {
 
   const { data, isLoading, refetch, error } = useQuery(
     ['post'],
     async () => {
-      const result: any = await API.graphql(graphqlOperation(listUsers));
+      const result: any = await API.graphql(graphqlOperation(getUser, { id }));
       return result.data as Data;
     }
   );
 
-  const users = data ? data.listUsers.items : [];
+  const user = data ? data.getUser.item : [];
 
   return {
     error,
     isLoading,
     refetch,
-    users
+    user
   }
 };
 
-export default useUsers;
+export default useUser;

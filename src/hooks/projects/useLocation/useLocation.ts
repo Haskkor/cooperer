@@ -1,33 +1,33 @@
 import { API, graphqlOperation } from 'aws-amplify';
 import { useQuery } from 'react-query';
 
-import { listLocations } from '../../../graphql/queries';
+import { getLocation } from '../../../graphql/queries';
 import { Location } from '../../../types/location';
 
 interface Data {
-  listLocations: {
-    items: Location[]
+  getLocation: {
+    item: Location
   }
 }
 
-const useLocations = () => {
+const useLocation = (id: string) => {
 
   const { data, isLoading, refetch, error } = useQuery(
     ['post'],
     async () => {
-      const result: any = await API.graphql(graphqlOperation(listLocations));
+      const result: any = await API.graphql(graphqlOperation(getLocation, { id }));
       return result.data as Data;
     }
   );
 
-  const locations = data ? data.listLocations.items : [];
+  const location = data ? data.getLocation.item : [];
 
   return {
     error,
     isLoading,
-    locations,
+    location,
     refetch
   }
 };
 
-export default useLocations;
+export default useLocation;
