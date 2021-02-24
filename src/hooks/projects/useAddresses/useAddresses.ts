@@ -5,7 +5,7 @@ import { listAddresss } from '../../../graphql/queries';
 import { Address } from '../../../types/address';
 
 interface Data {
-  listAddresss: {
+  listProjects: {
     items: Address[]
   }
 }
@@ -20,10 +20,11 @@ const useAddresses = () => {
     }
   );
 
-  const addresses = data ? data.listAddresss.items : [];
+  console.log('test', data)
+  // const addresses = data ? data.listProjects.items : [];
 
   return {
-    addresses,
+    addresses: data,
     error,
     isLoading,
     refetch
