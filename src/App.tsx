@@ -2,8 +2,10 @@ import { AmplifySignOut, withAuthenticator } from '@aws-amplify/ui-react';
 import React from 'react';
 
 import './App.css';
+// import Addresses from './pages/addresses/Addresses';
+import Categories from './pages/categories/Categories';
 // import Projects from './pages/projects/Projects';
-import Addresses from './pages/addresses/Addresses';
+
 // import useProjects from './hooks/projects/useProjects/useProjects';
 // import useAddresses from './hooks/projects/useAddresses/useAddresses';
 // import useCategories from './hooks/projects/useCategories/useCategories';
@@ -30,8 +32,9 @@ const App = () => {
 
   return (
     <div className="App">
+      <Categories />
       {/*<Projects />*/}
-      <Addresses />
+      {/*<Addresses />*/}
       <AmplifySignOut />
     </div>
   );

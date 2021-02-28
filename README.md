@@ -1,6 +1,9 @@
 Haskkor
 Test123456
 
+https://formik.org/docs/tutorial
+https://github.com/jquense/yup
+
 Query
 
 import { API, graphqlOperation } from 'aws-amplify'
