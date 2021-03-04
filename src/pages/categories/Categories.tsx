@@ -51,8 +51,7 @@ const Categories = () => {
             <Field
               id="categoryName"
               name="categoryName"
-              placeholder="john@acme.com"
-              type="email"
+              placeholder="Name"
             />
             <button type="submit">Submit</button>
           </Form>
