@@ -4,6 +4,7 @@ import React from 'react';
 import './App.css';
 // import Addresses from './pages/addresses/Addresses';
 import Categories from './pages/categories/Categories';
+import Skills from './pages/skills/Skills';
 // import Projects from './pages/projects/Projects';
 
 // import useProjects from './hooks/projects/useProjects/useProjects';
@@ -33,6 +34,7 @@ const App = () => {
   return (
     <div className="App">
       <Categories />
+      <Skills />
       {/*<Projects />*/}
       {/*<Addresses />*/}
       <AmplifySignOut />

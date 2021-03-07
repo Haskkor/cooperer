@@ -1,0 +1,15 @@
+{
+  "black-inset-1": "inset 1px 1px 2px #192028, inset -1px -1px 2px rgba(255, 255, 255, 0.1)",
+  "black-elevation-2": "2px 2px 8px rgba(0, 0, 0, 0.15)",
+  "white-inset-1": "inset 1px 1px 2px #CACBCC, inset -1px -1px 2px #FFFFFF",
+  "white-elevation-1": "1px 1px 2px #EFEFEF, -1px -1px 2px #FFFFFF",
+  "white-elevation-2": "1px 1px 16px #EFEFEF, -1px -1px 16px #FFFFFF",
+  "white-elevation-3": "0px 0px 32px rgba(39, 50, 63, 0.16)",
+  "grey-inset-1": "inset 1px 1px 2px #CACBCC, inset -1px -1px 2px #FFFFFF",
+  "grey-elevation-1": "1px 1px 2px #D7D8D9, -1px -1px 2px #FFFFFF",
+  "grey-elevation-2": "1px 1px 16px #D7D8D9, -1px -1px 16px #FFFFFF",
+  "green-elevation-1": "1px 1px 2px rgba(40, 164, 125, 0.25), -1px -1px 2px rgba(255, 255, 255, 0.05)",
+  "red-elevation-1": "1px 1px 2px rgba(233, 81, 87, 0.25), -1px -1px 2px rgba(255, 255, 255, 0.1)",
+  "neutral-light-inset": "inset 0 -1px 0 #E9EAEB",
+  "nav": "0px 1px 12px rgba(0, 0, 0, 0.08)"
+}
