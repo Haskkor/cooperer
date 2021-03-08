@@ -42,8 +42,8 @@ View the full documentation at https://tailwindcss.com.
 |
 */
 
-const colors = require('./constants/colours.json');
-const shadows = require('./constants/shadows.json');
+const colors = require('./src/constants/colours.json');
+const shadows = require('./src/constants/shadows.json');
 
 const pageWidth = 85; // 1360px, 85rem
 const pageWidthMarketing = 69.375; // 1110px
@@ -62,7 +62,6 @@ module.exports = {
     */
 
   prefix: '',
-  important: false,
   separator: ':',
   theme: {
     container: {
@@ -971,7 +970,7 @@ module.exports = {
     borderStyle: ['responsive'],
     borderWidth: ['responsive', 'focus', 'last'],
     cursor: ['responsive'],
-    display: ['responsive', 'important'],
+    display: ['responsive'],
     flexDirection: ['responsive'],
     flexWrap: ['responsive'],
     alignItems: ['responsive'],
@@ -999,7 +998,7 @@ module.exports = {
     overflow: ['responsive'],
     padding: ['responsive'],
     pointerEvents: ['responsive'],
-    position: ['responsive', 'important'],
+    position: ['responsive'],
     inset: ['responsive'],
     resize: ['responsive'],
     boxShadow: ['responsive', 'hover', 'focus'],

@@ -33,12 +33,11 @@ module.exports = {
     '@typescript-eslint/ban-types': 'error',
     '@typescript-eslint/ban-ts-ignore': 0,
     '@typescript-eslint/ban-ts-comment': 0,
-    '@typescript-eslint/class-name-casing': 'error',
+    '@typescript-eslint/naming-convention': 'error',
     '@typescript-eslint/consistent-type-assertions': 'error',
     '@typescript-eslint/consistent-type-definitions': 'error',
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/indent': 'off',
-    '@typescript-eslint/interface-name-prefix': 'error',
     '@typescript-eslint/member-delimiter-style': [
       'off',
       {
@@ -65,7 +64,6 @@ module.exports = {
     ],
     '@typescript-eslint/prefer-for-of': 'error',
     '@typescript-eslint/no-var-requires': 'off',
-    '@typescript-eslint/prefer-for-of': 'error',
     '@typescript-eslint/prefer-function-type': 'error',
     '@typescript-eslint/prefer-namespace-keyword': 'error',
     '@typescript-eslint/quotes': 'off',

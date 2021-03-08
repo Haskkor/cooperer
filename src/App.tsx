@@ -35,11 +35,11 @@ const App = () => {
     <div className="App">
       <Categories />
       <Skills />
-      {/*<Projects />*/}
-      {/*<Addresses />*/}
+      {/* <Projects /> */}
+      {/* <Addresses /> */}
       <AmplifySignOut />
     </div>
   );
-}
+};
 
 export default withAuthenticator(App);

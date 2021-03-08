@@ -9,38 +9,47 @@ const initialCreationFormState = {
   creationDate: new Date(),
   description: '',
   photos: []
-}
+};
 
-const Projects = () => {
-  const [showCreate, setShowCreate] = useState(false)
+const Projects: React.FC = () => {
+  const [showCreate, setShowCreate] = useState(false);
   const [formData, setFormData] = useState(initialCreationFormState);
   const { projects, error, isLoading } = useProjects();
 
-  if (error) return <div>error</div>
-  if (isLoading) return <div>loading</div>
+  if (error) return <div>error</div>;
+  if (isLoading) return <div>loading</div>;
 
   const createProject = async () => {
     if (!formData.description) return;
     setFormData(initialCreationFormState);
-    await API.graphql({ query: createProjectMutation, variables: { input: formData } });
-  }
+    await API.graphql({
+      query: createProjectMutation,
+      variables: { input: formData }
+    });
+  };
 
   return (
     <div>
-      {!showCreate && <button onClick={() => setShowCreate(true)}>Add project</button>}
-      {projects.map((p: Project) => <div>{p.name}</div>)}
-      {showCreate &&
-      <>
-        <input
-          onChange={e => setFormData({ ...formData, description: e.target.value })}
-          placeholder="Project description"
-          value={formData.description}
-        />
-        <button onClick={createProject}>Create Project</button>
-      </>
-      }
+      {!showCreate && (
+        <button onClick={() => setShowCreate(true)}>Add project</button>
+      )}
+      {projects.map((p: Project) => (
+        <div>{p.name}</div>
+      ))}
+      {showCreate && (
+        <>
+          <input
+            onChange={e =>
+              setFormData({ ...formData, description: e.target.value })
+            }
+            placeholder="Project description"
+            value={formData.description}
+          />
+          <button onClick={createProject}>Create Project</button>
+        </>
+      )}
     </div>
   );
-}
+};
 
 export default Projects;

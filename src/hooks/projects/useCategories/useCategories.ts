@@ -6,19 +6,15 @@ import { Category } from '../../../types/category';
 
 interface Data {
   listCategorys: {
-    items: Category[]
-  }
+    items: Category[];
+  };
 }
 
 const useCategories = () => {
-
-  const { data, isLoading, refetch, error } = useQuery(
-    ['post'],
-    async () => {
-      const result: any = await API.graphql(graphqlOperation(listCategorys));
-      return result.data as Data;
-    }
-  );
+  const { data, isLoading, refetch, error } = useQuery(['post'], async () => {
+    const result: any = await API.graphql(graphqlOperation(listCategorys));
+    return result.data as Data;
+  });
 
   const categories = data ? data.listCategorys.items : [];
 
@@ -27,7 +23,7 @@ const useCategories = () => {
     error,
     isLoading,
     refetch
-  }
+  };
 };
 
 export default useCategories;
