@@ -11,7 +11,7 @@ const initialCreationFormState = {
   town: ''
 };
 
-const Addresses: React.FC = () => {
+const ADDRESSES: React.FC = () => {
   const [showCreate, setShowCreate] = useState(false);
   const [formData, setFormData] = useState(initialCreationFormState);
   const { error, isLoading } = useAddresses();
@@ -65,4 +65,4 @@ const Addresses: React.FC = () => {
   );
 };
 
-export default Addresses;
+export default ADDRESSES;

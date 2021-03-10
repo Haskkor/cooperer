@@ -12,7 +12,7 @@ interface FormCategory {
   name: string;
 }
 
-const Categories: React.FC = () => {
+const CATEGORIES: React.FC = () => {
   const [showCreate, setShowCreate] = useState(false);
   const { categories, error, isLoading } = useCategories();
 
@@ -70,4 +70,4 @@ const Categories: React.FC = () => {
   );
 };
 
-export default Categories;
+export default CATEGORIES;

@@ -1,4 +1,5 @@
 import { API, graphqlOperation } from 'aws-amplify';
+import { pathOr } from 'ramda';
 import { useQuery } from 'react-query';
 
 import { listSkills } from '../../../graphql/queries';
@@ -16,7 +17,7 @@ const useSkills = () => {
     return result.data as Data;
   });
 
-  const skills = data ? data.listSkills.items : [];
+  const skills = pathOr([], ['listSkills', 'items'])(data);
 
   return {
     error,

@@ -15,7 +15,7 @@ import Skills from './pages/skills/Skills';
 // import useSkills from './hooks/projects/useSkills/useSkills';
 // import useUsers from './hooks/projects/useUsers/useUsers';
 
-const App = () => {
+const APP = () => {
   // const { projects } = useProjects();
   // console.log('projects', projects)
   // const { addresses } = useAddresses();
@@ -42,4 +42,4 @@ const App = () => {
   );
 };
 
-export default withAuthenticator(App);
+export default withAuthenticator(APP);

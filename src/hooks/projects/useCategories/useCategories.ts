@@ -1,4 +1,5 @@
 import { API, graphqlOperation } from 'aws-amplify';
+import { pathOr } from 'ramda';
 import { useQuery } from 'react-query';
 
 import { listCategorys } from '../../../graphql/queries';
@@ -16,7 +17,7 @@ const useCategories = () => {
     return result.data as Data;
   });
 
-  const categories = data ? data.listCategorys.items : [];
+  const categories = pathOr([], ['listCategorys', 'items'])(data);
 
   return {
     categories,

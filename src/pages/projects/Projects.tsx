@@ -11,7 +11,7 @@ const initialCreationFormState = {
   photos: []
 };
 
-const Projects: React.FC = () => {
+const PROJECTS: React.FC = () => {
   const [showCreate, setShowCreate] = useState(false);
   const [formData, setFormData] = useState(initialCreationFormState);
   const { projects, error, isLoading } = useProjects();
@@ -34,7 +34,7 @@ const Projects: React.FC = () => {
         <button onClick={() => setShowCreate(true)}>Add project</button>
       )}
       {projects.map((p: Project) => (
-        <div>{p.name}</div>
+        <div key={p.id}>{p.name}</div>
       ))}
       {showCreate && (
         <>
@@ -52,4 +52,4 @@ const Projects: React.FC = () => {
   );
 };
 
-export default Projects;
+export default PROJECTS;

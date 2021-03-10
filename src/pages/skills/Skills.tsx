@@ -12,7 +12,7 @@ interface FormSkill {
   proficiency: string;
 }
 
-const Skills: React.FC = () => {
+const SKILLS: React.FC = () => {
   const [showCreate, setShowCreate] = useState(false);
   const { skills, error, isLoading } = useSkills();
 
@@ -70,4 +70,4 @@ const Skills: React.FC = () => {
   );
 };
 
-export default Skills;
+export default SKILLS;
