@@ -12,10 +12,13 @@ interface Data {
 }
 
 const useSkills = () => {
-  const { data, isLoading, refetch, error } = useQuery(['post'], async () => {
-    const result: any = await API.graphql(graphqlOperation(listSkills));
-    return result.data as Data;
-  });
+  const { data, isLoading, refetch, error } = useQuery(
+    ['listSkills'],
+    async () => {
+      const result: any = await API.graphql(graphqlOperation(listSkills));
+      return result.data as Data;
+    }
+  );
 
   const skills = pathOr([], ['listSkills', 'items'])(data);
 

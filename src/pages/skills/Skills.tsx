@@ -19,6 +19,7 @@ const SKILLS: React.FC = () => {
   if (error) return <div>error</div>;
   if (isLoading) return <div>loading</div>;
 
+  // todo put on the hook
   const createSkill = async (input: FormSkill) =>
     await API.graphql({
       query: createSkillMutation,
@@ -47,18 +48,14 @@ const SKILLS: React.FC = () => {
             }}
           >
             <Form>
-              <label htmlFor="skillDescription">Skill description</label>
+              <label htmlFor="description">Skill description</label>
+              <Field id="description" name="description" placeholder="Desc" />
+              <label htmlFor="name">Skill name</label>
+              <Field id="name" name="name" placeholder="Name" />
+              <label htmlFor="proficiency">Category proficiency</label>
               <Field
-                id="skillDescription"
-                name="skillDescription"
-                placeholder="Desc"
-              />
-              <label htmlFor="skillName">Skill name</label>
-              <Field id="skillName" name="skillName" placeholder="Name" />
-              <label htmlFor="categoryProficiency">Category proficiency</label>
-              <Field
-                id="categoryProficiency"
-                name="categoryProficiency"
+                id="proficiency"
+                name="proficiency"
                 placeholder="Beginner"
               />
               <button type="submit">Submit</button>

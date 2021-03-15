@@ -19,6 +19,7 @@ const CATEGORIES: React.FC = () => {
   if (error) return <div>error</div>;
   if (isLoading) return <div>loading</div>;
 
+  // todo put on the hook
   const createCategory = async (input: FormCategory) =>
     await API.graphql({
       query: createCategoryMutation,
@@ -47,20 +48,12 @@ const CATEGORIES: React.FC = () => {
             }}
           >
             <Form>
-              <label htmlFor="categoryDescription">Category description</label>
-              <Field
-                id="categoryDescription"
-                name="categoryDescription"
-                placeholder="Desc"
-              />
-              <label htmlFor="categoryImageUrl">Category image url</label>
-              <Field
-                id="categoryImageUrl"
-                name="categoryImageUrl"
-                placeholder="Img"
-              />
-              <label htmlFor="categoryName">Category name</label>
-              <Field id="categoryName" name="categoryName" placeholder="Name" />
+              <label htmlFor="description">Category description</label>
+              <Field id="description" name="description" placeholder="Desc" />
+              <label htmlFor="image">Category image url</label>
+              <Field id="image" name="image" placeholder="Img" />
+              <label htmlFor="name">Category name</label>
+              <Field id="name" name="name" placeholder="Name" />
               <button type="submit">Submit</button>
             </Form>
           </Formik>

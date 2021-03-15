@@ -12,10 +12,13 @@ interface Data {
 }
 
 const useCategories = () => {
-  const { data, isLoading, refetch, error } = useQuery(['post'], async () => {
-    const result: any = await API.graphql(graphqlOperation(listCategorys));
-    return result.data as Data;
-  });
+  const { data, isLoading, refetch, error } = useQuery(
+    ['listCategorys'],
+    async () => {
+      const result: any = await API.graphql(graphqlOperation(listCategorys));
+      return result.data as Data;
+    }
+  );
 
   const categories = pathOr([], ['listCategorys', 'items'])(data);
 
