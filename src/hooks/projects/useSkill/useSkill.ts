@@ -6,14 +6,13 @@ import { Skill } from '../../../types/skill';
 
 interface Data {
   getSkill: {
-    item: Skill
-  }
+    item: Skill;
+  };
 }
 
 const useSkill = (id: string) => {
-
   const { data, isLoading, refetch, error } = useQuery(
-    ['post'],
+    ['getSkill'],
     async () => {
       const result: any = await API.graphql(graphqlOperation(getSkill, { id }));
       return result.data as Data;
@@ -27,7 +26,7 @@ const useSkill = (id: string) => {
     isLoading,
     refetch,
     skill
-  }
+  };
 };
 
 export default useSkill;

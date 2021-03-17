@@ -6,16 +6,17 @@ import { ProjectComment } from '../../../types/projectComments';
 
 interface Data {
   listProjectComments: {
-    items: ProjectComment[]
-  }
+    items: ProjectComment[];
+  };
 }
 
 const useProjectComments = () => {
-
   const { data, isLoading, refetch, error } = useQuery(
-    ['post'],
+    ['listProjectComments'],
     async () => {
-      const result: any = await API.graphql(graphqlOperation(listProjectComments));
+      const result: any = await API.graphql(
+        graphqlOperation(listProjectComments)
+      );
       return result.data as Data;
     }
   );
@@ -27,7 +28,7 @@ const useProjectComments = () => {
     error,
     isLoading,
     refetch
-  }
+  };
 };
 
 export default useProjectComments;

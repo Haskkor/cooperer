@@ -6,16 +6,17 @@ import { Project } from '../../../types/project';
 
 interface Data {
   getProject: {
-    item: Project
-  }
+    item: Project;
+  };
 }
 
 const useProject = (id: string) => {
-
   const { data, isLoading, refetch, error } = useQuery(
-    ['post'],
+    ['getProject'],
     async () => {
-      const result: any = await API.graphql(graphqlOperation(getProject, { id }));
+      const result: any = await API.graphql(
+        graphqlOperation(getProject, { id })
+      );
       return result.data as Data;
     }
   );
@@ -27,7 +28,7 @@ const useProject = (id: string) => {
     isLoading,
     project,
     refetch
-  }
+  };
 };
 
 export default useProject;

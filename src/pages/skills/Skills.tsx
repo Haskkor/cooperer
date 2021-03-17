@@ -27,7 +27,7 @@ const SKILLS: React.FC = () => {
     });
 
   return (
-    <div>
+    <div className={'widget'}>
       {!showCreate && (
         <button onClick={() => setShowCreate(true)}>Add skill</button>
       )}

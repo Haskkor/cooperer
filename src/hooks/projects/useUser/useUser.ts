@@ -7,13 +7,12 @@ import { User } from '../../../types/user';
 interface Data {
   getUser: {
     item: User;
-  }
+  };
 }
 
 const useUser = (id: string) => {
-
   const { data, isLoading, refetch, error } = useQuery(
-    ['post'],
+    ['getUser'],
     async () => {
       const result: any = await API.graphql(graphqlOperation(getUser, { id }));
       return result.data as Data;
@@ -27,7 +26,7 @@ const useUser = (id: string) => {
     isLoading,
     refetch,
     user
-  }
+  };
 };
 
 export default useUser;

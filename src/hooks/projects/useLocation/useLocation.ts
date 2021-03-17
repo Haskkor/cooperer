@@ -6,16 +6,17 @@ import { Location } from '../../../types/location';
 
 interface Data {
   getLocation: {
-    item: Location
-  }
+    item: Location;
+  };
 }
 
 const useLocation = (id: string) => {
-
   const { data, isLoading, refetch, error } = useQuery(
-    ['post'],
+    ['getLocation'],
     async () => {
-      const result: any = await API.graphql(graphqlOperation(getLocation, { id }));
+      const result: any = await API.graphql(
+        graphqlOperation(getLocation, { id })
+      );
       return result.data as Data;
     }
   );
@@ -27,7 +28,7 @@ const useLocation = (id: string) => {
     isLoading,
     location,
     refetch
-  }
+  };
 };
 
 export default useLocation;

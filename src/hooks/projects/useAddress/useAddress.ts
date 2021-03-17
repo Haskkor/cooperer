@@ -6,16 +6,17 @@ import { Address } from '../../../types/address';
 
 interface Data {
   getAddress: {
-    item: Address
-  }
+    item: Address;
+  };
 }
 
 const useAddress = (id: string) => {
-
   const { data, isLoading, refetch, error } = useQuery(
-    ['post'],
+    ['getAddress'],
     async () => {
-      const result: any = await API.graphql(graphqlOperation(getAddress, { id }));
+      const result: any = await API.graphql(
+        graphqlOperation(getAddress, { id })
+      );
       return result.data as Data;
     }
   );
@@ -27,7 +28,7 @@ const useAddress = (id: string) => {
     error,
     isLoading,
     refetch
-  }
+  };
 };
 
 export default useAddress;
