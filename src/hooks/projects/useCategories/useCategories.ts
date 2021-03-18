@@ -1,6 +1,6 @@
 import { API, graphqlOperation } from 'aws-amplify';
 import { pathOr } from 'ramda';
-import { useQuery } from 'react-query';
+import { QueryObserverResult, RefetchOptions, useQuery } from 'react-query';
 
 import { listCategorys } from '../../../graphql/queries';
 import { Category } from '../../../types/category';
@@ -11,7 +11,16 @@ interface Data {
   };
 }
 
-const useCategories = () => {
+interface UseCategories {
+  categories: Category[];
+  error: unknown;
+  isLoading: boolean;
+  refetch: (
+    options?: RefetchOptions
+  ) => Promise<QueryObserverResult<Data, unknown>>;
+}
+
+const useCategories: () => UseCategories = () => {
   const { data, isLoading, refetch, error } = useQuery(
     ['listCategorys'],
     async () => {

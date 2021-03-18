@@ -1,6 +1,6 @@
 import { API, graphqlOperation } from 'aws-amplify';
 import { pathOr } from 'ramda';
-import { useQuery } from 'react-query';
+import { QueryObserverResult, RefetchOptions, useQuery } from 'react-query';
 
 import { listSkills } from '../../../graphql/queries';
 import { Skill } from '../../../types/skill';
@@ -11,7 +11,16 @@ interface Data {
   };
 }
 
-const useSkills = () => {
+interface UseSkills {
+  error: unknown;
+  isLoading: boolean;
+  refetch: (
+    options?: RefetchOptions
+  ) => Promise<QueryObserverResult<Data, unknown>>;
+  skills: Skill[];
+}
+
+const useSkills: () => UseSkills = () => {
   const { data, isLoading, refetch, error } = useQuery(
     ['listSkills'],
     async () => {
