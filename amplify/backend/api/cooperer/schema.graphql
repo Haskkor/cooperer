@@ -4,7 +4,7 @@ type Address @model {
   postalCode: String!
   suburb: String!
   town: String!
-  user: User!
+  user: [User]
 }
 
 type Category @model {
@@ -33,7 +33,7 @@ type Location @model {
   country: String!
   id: ID!
   postalCode: String!
-  project: Project!
+  project: [Project]
   suburb: String!
   town: String!
 }

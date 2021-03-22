@@ -32,3 +32,12 @@ const [deleteGalleryMutation, { isLoading: isDeleting }] = useMutation(
 async (variables: DeletePostMutationVariables) =>
 await API.graphql(graphqlOperation(deletePost, variables))
 );
+
+
+Address | No dep | NOK
+Category | No dep | OK
+Comment | Project && User | NOK
+Location | No dep | NOK
+Project | Category && Location && User | NOK
+Skill | No dep | OK
+User | Address | NOK
