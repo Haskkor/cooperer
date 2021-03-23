@@ -1,30 +1,17 @@
 import React, { useState } from 'react';
 import { Formik, Field, Form } from 'formik';
-import { API } from 'aws-amplify';
 
-import { createCategory as createCategoryMutation } from '../../graphql/mutations';
-import useCategories from '../../hooks/projects/useCategories/useCategories';
+import useCategories, {
+  FormCategory
+} from '../../hooks/projects/useCategories/useCategories';
 import { Category } from '../../types/category';
-
-interface FormCategory {
-  description: string;
-  image: string;
-  name: string;
-}
 
 const CATEGORIES: React.FC = () => {
   const [showCreate, setShowCreate] = useState(false);
-  const { categories, error, isLoading } = useCategories();
+  const { categories, createCategory, error, isLoading } = useCategories();
 
   if (error) return <div>error</div>;
   if (isLoading) return <div>loading</div>;
-
-  // todo put on the hook
-  const createCategory = async (input: FormCategory) =>
-    await API.graphql({
-      query: createCategoryMutation,
-      variables: { input }
-    });
 
   return (
     <div className={'widget'}>

@@ -4,6 +4,7 @@ import { QueryObserverResult, RefetchOptions, useQuery } from 'react-query';
 
 import { listSkills } from '../../../graphql/queries';
 import { Skill } from '../../../types/skill';
+import { createSkill as createSkillMutation } from '../../../graphql/mutations';
 
 interface Data {
   listSkills: {
@@ -11,13 +12,20 @@ interface Data {
   };
 }
 
+export interface FormSkill {
+  description: string;
+  name: string;
+  proficiency: string;
+}
+
 interface UseSkills {
   error: unknown;
   isLoading: boolean;
-  refetch: (
-    options?: RefetchOptions
-  ) => Promise<QueryObserverResult<Data, unknown>>;
   skills: Skill[];
+  createSkill(input: FormSkill): void;
+  refetch(
+    options?: RefetchOptions
+  ): Promise<QueryObserverResult<Data, unknown>>;
 }
 
 const useSkills: () => UseSkills = () => {
@@ -31,7 +39,14 @@ const useSkills: () => UseSkills = () => {
 
   const skills = pathOr([], ['listSkills', 'items'])(data);
 
+  const createSkill = async (input: FormSkill) =>
+    await API.graphql({
+      query: createSkillMutation,
+      variables: { input }
+    });
+
   return {
+    createSkill,
     error,
     isLoading,
     refetch,

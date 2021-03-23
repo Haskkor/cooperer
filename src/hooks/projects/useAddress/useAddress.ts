@@ -1,8 +1,9 @@
 import { API, graphqlOperation } from 'aws-amplify';
-import { useQuery } from 'react-query';
+import { QueryObserverResult, RefetchOptions, useQuery } from 'react-query';
 
 import { getAddress } from '../../../graphql/queries';
 import { Address } from '../../../types/address';
+import { createAddress as createAddressMutation } from '../../../graphql/mutations';
 
 interface Data {
   getAddress: {
@@ -10,7 +11,24 @@ interface Data {
   };
 }
 
-const useAddress = (id: string) => {
+export interface FormAddress {
+  country: string;
+  postalCode: string;
+  suburb: string;
+  town: string;
+}
+
+interface UseAddress {
+  address?: Address;
+  error: unknown;
+  isLoading: boolean;
+  createAddress(input: FormAddress): void;
+  refetch(
+    options?: RefetchOptions
+  ): Promise<QueryObserverResult<Data, unknown>>;
+}
+
+const useAddress: (id?: string) => UseAddress = (id?: string) => {
   const { data, isLoading, refetch, error } = useQuery(
     ['getAddress'],
     async () => {
@@ -18,13 +36,21 @@ const useAddress = (id: string) => {
         graphqlOperation(getAddress, { id })
       );
       return result.data as Data;
-    }
+    },
+    { enabled: !!id }
   );
 
-  const address = data ? data.getAddress.item : [];
+  const address = data ? data.getAddress.item : undefined;
+
+  const createAddress = async (input: FormAddress) =>
+    await API.graphql({
+      query: createAddressMutation,
+      variables: { input }
+    });
 
   return {
     address,
+    createAddress,
     error,
     isLoading,
     refetch

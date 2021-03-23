@@ -1,30 +1,15 @@
 import React, { useState } from 'react';
 import { Formik, Field, Form } from 'formik';
-import { API } from 'aws-amplify';
 
-import { createSkill as createSkillMutation } from '../../graphql/mutations';
-import useSkills from '../../hooks/projects/useSkills/useSkills';
+import useSkills, { FormSkill } from '../../hooks/projects/useSkills/useSkills';
 import { Skill } from '../../types/skill';
-
-interface FormSkill {
-  description: string;
-  name: string;
-  proficiency: string;
-}
 
 const SKILLS: React.FC = () => {
   const [showCreate, setShowCreate] = useState(false);
-  const { skills, error, isLoading } = useSkills();
+  const { createSkill, skills, error, isLoading } = useSkills();
 
   if (error) return <div>error</div>;
   if (isLoading) return <div>loading</div>;
-
-  // todo put on the hook
-  const createSkill = async (input: FormSkill) =>
-    await API.graphql({
-      query: createSkillMutation,
-      variables: { input }
-    });
 
   return (
     <div className={'widget'}>
