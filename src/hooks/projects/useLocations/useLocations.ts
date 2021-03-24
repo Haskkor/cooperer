@@ -1,8 +1,9 @@
 import { API, graphqlOperation } from 'aws-amplify';
-import { useQuery } from 'react-query';
+import { QueryObserverResult, RefetchOptions, useQuery } from 'react-query';
 
 import { listLocations } from '../../../graphql/queries';
 import { Location } from '../../../types/location';
+import { pathOr } from 'ramda';
 
 interface Data {
   listLocations: {
@@ -10,7 +11,16 @@ interface Data {
   };
 }
 
-const useLocations = () => {
+interface UseLocations {
+  locations: Location[];
+  error: unknown;
+  isLoading: boolean;
+  refetch(
+    options?: RefetchOptions
+  ): Promise<QueryObserverResult<Data, unknown>>;
+}
+
+const useLocations: () => UseLocations = () => {
   const { data, isLoading, refetch, error } = useQuery(
     ['listLocations'],
     async () => {
@@ -19,7 +29,7 @@ const useLocations = () => {
     }
   );
 
-  const locations = data ? data.listLocations.items : [];
+  const locations = pathOr([], ['listLocations', 'items'])(data);
 
   return {
     error,

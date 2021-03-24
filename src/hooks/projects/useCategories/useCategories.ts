@@ -4,7 +4,6 @@ import { QueryObserverResult, RefetchOptions, useQuery } from 'react-query';
 
 import { listCategorys } from '../../../graphql/queries';
 import { Category } from '../../../types/category';
-import { createCategory as createCategoryMutation } from '../../../graphql/mutations';
 
 interface Data {
   listCategorys: {
@@ -12,17 +11,10 @@ interface Data {
   };
 }
 
-export interface FormCategory {
-  description: string;
-  image: string;
-  name: string;
-}
-
 interface UseCategories {
   categories: Category[];
   error: unknown;
   isLoading: boolean;
-  createCategory(input: FormCategory): void;
   refetch(
     options?: RefetchOptions
   ): Promise<QueryObserverResult<Data, unknown>>;
@@ -39,15 +31,8 @@ const useCategories: () => UseCategories = () => {
 
   const categories = pathOr([], ['listCategorys', 'items'])(data);
 
-  const createCategory = async (input: FormCategory) =>
-    await API.graphql({
-      query: createCategoryMutation,
-      variables: { input }
-    });
-
   return {
     categories,
-    createCategory,
     error,
     isLoading,
     refetch

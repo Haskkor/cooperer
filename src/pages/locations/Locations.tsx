@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
 import { Formik, Field, Form } from 'formik';
 
-import useAddresses from '../../hooks/projects/useAddresses/useAddresses';
-import { Address } from '../../types/address';
-import useAddress, {
-  FormAddress
-} from '../../hooks/projects/useAddress/useAddress';
+import { Location } from '../../types/location';
+import useLocations from '../../hooks/projects/useLocations/useLocations';
+import useLocation, {
+  FormLocation
+} from '../../hooks/projects/useLocation/useLocation';
 
-const ADDRESSES: React.FC = () => {
+const LOCATIONS: React.FC = () => {
   const [showCreate, setShowCreate] = useState(false);
-  const { addresses, error, isLoading } = useAddresses();
-  const { createAddress } = useAddress();
+  const { locations, error, isLoading } = useLocations();
+  const { createLocation } = useLocation();
 
   if (error) return <div>error</div>;
   if (isLoading) return <div>loading</div>;
@@ -18,14 +18,14 @@ const ADDRESSES: React.FC = () => {
   return (
     <div className={'widget'}>
       {!showCreate && (
-        <button onClick={() => setShowCreate(true)}>Add skill</button>
+        <button onClick={() => setShowCreate(true)}>Add location</button>
       )}
-      {addresses.map((s: Address) => (
+      {locations.map((s: Location) => (
         <div key={s.id}>{s.town}</div>
       ))}
       {showCreate && (
         <div>
-          <h1>Category</h1>
+          <h1>Location</h1>
           <Formik
             initialValues={{
               country: '',
@@ -33,22 +33,22 @@ const ADDRESSES: React.FC = () => {
               suburb: '',
               town: ''
             }}
-            onSubmit={(values: FormAddress) => {
-              createAddress(values);
+            onSubmit={(values: FormLocation) => {
+              createLocation(values);
             }}
           >
             <Form>
-              <label htmlFor="country">Address country</label>
+              <label htmlFor="country">Location country</label>
               <Field id="country" name="country" placeholder="Country" />
-              <label htmlFor="postalCode">Address postal code</label>
+              <label htmlFor="postalCode">Location postal code</label>
               <Field
                 id="postal-code"
                 name="postal-code"
                 placeholder="Postal Code"
               />
-              <label htmlFor="suburb">Address suburb</label>
+              <label htmlFor="suburb">Location suburb</label>
               <Field id="suburb" name="suburb" placeholder="Suburb" />
-              <label htmlFor="town">Address town</label>
+              <label htmlFor="town">Location town</label>
               <Field id="town" name="town" placeholder="Town" />
               <button type="submit">Submit</button>
             </Form>
@@ -59,4 +59,4 @@ const ADDRESSES: React.FC = () => {
   );
 };
 
-export default ADDRESSES;
+export default LOCATIONS;

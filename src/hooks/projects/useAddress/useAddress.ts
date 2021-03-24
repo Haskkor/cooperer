@@ -1,4 +1,5 @@
 import { API, graphqlOperation } from 'aws-amplify';
+import { pathOr } from 'ramda';
 import { QueryObserverResult, RefetchOptions, useQuery } from 'react-query';
 
 import { getAddress } from '../../../graphql/queries';
@@ -40,7 +41,7 @@ const useAddress: (id?: string) => UseAddress = (id?: string) => {
     { enabled: !!id }
   );
 
-  const address = data ? data.getAddress.item : undefined;
+  const address = pathOr(undefined, ['getAddress', 'item'])(data);
 
   const createAddress = async (input: FormAddress) =>
     await API.graphql({

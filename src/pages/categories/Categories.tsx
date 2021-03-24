@@ -1,14 +1,16 @@
 import React, { useState } from 'react';
 import { Formik, Field, Form } from 'formik';
 
-import useCategories, {
-  FormCategory
-} from '../../hooks/projects/useCategories/useCategories';
+import useCategories from '../../hooks/projects/useCategories/useCategories';
 import { Category } from '../../types/category';
+import useCategory, {
+  FormCategory
+} from '../../hooks/projects/useCategory/useCategory';
 
 const CATEGORIES: React.FC = () => {
   const [showCreate, setShowCreate] = useState(false);
-  const { categories, createCategory, error, isLoading } = useCategories();
+  const { categories, error, isLoading } = useCategories();
+  const { createCategory } = useCategory();
 
   if (error) return <div>error</div>;
   if (isLoading) return <div>loading</div>;

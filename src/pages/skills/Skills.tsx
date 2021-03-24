@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import { Formik, Field, Form } from 'formik';
 
-import useSkills, { FormSkill } from '../../hooks/projects/useSkills/useSkills';
+import useSkills from '../../hooks/projects/useSkills/useSkills';
 import { Skill } from '../../types/skill';
+import useSkill, { FormSkill } from '../../hooks/projects/useSkill/useSkill';
 
 const SKILLS: React.FC = () => {
   const [showCreate, setShowCreate] = useState(false);
-  const { createSkill, skills, error, isLoading } = useSkills();
+  const { skills, error, isLoading } = useSkills();
+  const { createSkill } = useSkill();
 
   if (error) return <div>error</div>;
   if (isLoading) return <div>loading</div>;
