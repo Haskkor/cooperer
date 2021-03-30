@@ -25,7 +25,7 @@ const ADDRESSES: React.FC = () => {
       ))}
       {showCreate && (
         <div>
-          <h1>Category</h1>
+          <h1>Address</h1>
           <Formik
             initialValues={{
               country: '',

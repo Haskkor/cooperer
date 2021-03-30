@@ -3,6 +3,7 @@ Test123456
 
 https://formik.org/docs/tutorial
 https://github.com/jquense/yup
+https://docs.amplify.aws/lib/auth/manageusers/q/platform/js#account-recovery-verification
 
 Query
 

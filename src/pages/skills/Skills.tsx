@@ -23,7 +23,7 @@ const SKILLS: React.FC = () => {
       ))}
       {showCreate && (
         <div>
-          <h1>Category</h1>
+          <h1>Skill</h1>
           <Formik
             initialValues={{
               description: '',
