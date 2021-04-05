@@ -42,8 +42,8 @@ const ADDRESSES: React.FC = () => {
               <Field id="country" name="country" placeholder="Country" />
               <label htmlFor="postalCode">Address postal code</label>
               <Field
-                id="postal-code"
-                name="postal-code"
+                id="postalCode"
+                name="postalCode"
                 placeholder="Postal Code"
               />
               <label htmlFor="suburb">Address suburb</label>

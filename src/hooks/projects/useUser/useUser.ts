@@ -1,8 +1,11 @@
-import { API, Auth, graphqlOperation } from 'aws-amplify';
-import { useQuery } from 'react-query';
+import { API, graphqlOperation } from 'aws-amplify';
+import { pathOr } from 'ramda';
+import { QueryObserverResult, RefetchOptions, useQuery } from 'react-query';
 
 import { getUser } from '../../../graphql/queries';
 import { User } from '../../../types/user';
+import { createUser as createUserMutation } from '../../../graphql/mutations';
+import { Address } from '../../../types/address';
 
 interface Data {
   getUser: {
@@ -10,7 +13,24 @@ interface Data {
   };
 }
 
-const useUser = (id?: string) => {
+export interface FormUser {
+  address: Address;
+  description?: string;
+  email: string;
+  userName: string;
+}
+
+interface UseUser {
+  user?: User;
+  error: unknown;
+  isLoading: boolean;
+  createUser(input: FormUser): void;
+  refetch(
+    options?: RefetchOptions
+  ): Promise<QueryObserverResult<Data, unknown>>;
+}
+
+const useUser: (id?: string) => UseUser = (id?: string) => {
   const { data, isLoading, refetch, error } = useQuery(
     ['getUser'],
     async () => {
@@ -20,16 +40,16 @@ const useUser = (id?: string) => {
     { enabled: !!id }
   );
 
-  const testAuth = useQuery(['getAuthUser'], async () => {
-    return await Auth.currentAuthenticatedUser({
-      bypassCache: false
-    });
-  });
-  console.log(testAuth);
+  const user = pathOr(undefined, ['getUser', 'item'])(data);
 
-  const user = data ? data.getUser.item : [];
+  const createUser = async (input: FormUser) =>
+    await API.graphql({
+      query: createUserMutation,
+      variables: { input }
+    });
 
   return {
+    createUser,
     error,
     isLoading,
     refetch,

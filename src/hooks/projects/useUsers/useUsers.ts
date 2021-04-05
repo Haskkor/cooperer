@@ -1,5 +1,6 @@
 import { API, graphqlOperation } from 'aws-amplify';
-import { useQuery } from 'react-query';
+import { pathOr } from 'ramda';
+import { QueryObserverResult, RefetchOptions, useQuery } from 'react-query';
 
 import { listUsers } from '../../../graphql/queries';
 import { User } from '../../../types/user';
@@ -10,7 +11,16 @@ interface Data {
   };
 }
 
-const useUsers = () => {
+interface UseUsers {
+  users: User[];
+  error: unknown;
+  isLoading: boolean;
+  refetch(
+    options?: RefetchOptions
+  ): Promise<QueryObserverResult<Data, unknown>>;
+}
+
+const useUsers: () => UseUsers = () => {
   const { data, isLoading, refetch, error } = useQuery(
     ['listUsers'],
     async () => {
@@ -19,7 +29,7 @@ const useUsers = () => {
     }
   );
 
-  const users = data ? data.listUsers.items : [];
+  const users = pathOr([], ['listUsers', 'items'])(data);
 
   return {
     error,

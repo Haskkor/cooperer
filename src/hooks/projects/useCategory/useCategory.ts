@@ -36,10 +36,11 @@ const useCategory: (id?: string) => UseCategory = (id?: string) => {
         graphqlOperation(getCategory, { id })
       );
       return result.data as Data;
-    }
+    },
+    { enabled: !!id }
   );
 
-  const category = pathOr(undefined, ['getCategory', 'items'])(data);
+  const category = pathOr(undefined, ['getCategory', 'item'])(data);
 
   const createCategory = async (input: FormCategory) =>
     await API.graphql({
