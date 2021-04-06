@@ -6,6 +6,7 @@ import Addresses from './pages/addresses/Addresses';
 import Categories from './pages/categories/Categories';
 import Locations from './pages/locations/Locations';
 import Skills from './pages/skills/Skills';
+import Users from './pages/users/Users';
 // import Projects from './pages/projects/Projects';
 
 const APP = () => (
@@ -14,6 +15,7 @@ const APP = () => (
     <Categories />
     <Locations />
     <Skills />
+    <Users />
     {/* <Projects /> */}
     <AmplifySignOut />
   </div>

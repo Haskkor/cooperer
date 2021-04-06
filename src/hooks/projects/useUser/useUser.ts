@@ -1,4 +1,4 @@
-import { API, graphqlOperation } from 'aws-amplify';
+import { API, Auth, graphqlOperation } from 'aws-amplify';
 import { pathOr } from 'ramda';
 import { QueryObserverResult, RefetchOptions, useQuery } from 'react-query';
 
@@ -40,20 +40,32 @@ const useUser: (id?: string) => UseUser = (id?: string) => {
     { enabled: !!id }
   );
 
-  const user = pathOr(undefined, ['getUser', 'item'])(data);
+  const userData = pathOr(undefined, ['getUser', 'item'])(data);
 
-  const createUser = async (input: FormUser) =>
+  const awsUser = useQuery(['getAuthUser'], async () => {
+    return await Auth.currentAuthenticatedUser({
+      bypassCache: false
+    });
+  });
+
+  const createUser = async (user: FormUser) => {
+    const input = {
+      ...user,
+      userName: awsUser.data.username,
+      email: awsUser.data.attributes.email
+    };
     await API.graphql({
       query: createUserMutation,
       variables: { input }
     });
+  };
 
   return {
     createUser,
     error,
     isLoading,
     refetch,
-    user
+    user: userData
   };
 };
 

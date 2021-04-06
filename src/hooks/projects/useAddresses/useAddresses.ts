@@ -6,7 +6,7 @@ import { listAddresss } from '../../../graphql/queries';
 import { Address } from '../../../types/address';
 
 interface Data {
-  listAddresses: {
+  listAddresss: {
     items: Address[];
   };
 }
@@ -21,12 +21,15 @@ interface UseAddresses {
 }
 
 const useAddresses: () => UseAddresses = () => {
-  const { data, isLoading, refetch, error } = useQuery(['post'], async () => {
-    const result: any = await API.graphql(graphqlOperation(listAddresss));
-    return result.data as Data;
-  });
+  const { data, isLoading, refetch, error } = useQuery(
+    ['listAddresss'],
+    async () => {
+      const result: any = await API.graphql(graphqlOperation(listAddresss));
+      return result.data as Data;
+    }
+  );
 
-  const addresses = pathOr([], ['listAddresses', 'items'])(data);
+  const addresses = pathOr([], ['listAddresss', 'items'])(data);
 
   return {
     addresses,

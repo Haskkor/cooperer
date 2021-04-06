@@ -348,18 +348,18 @@ Outputs:
   UserPoolId:
     Value:
       Ref: UserPool
-    Description: Id for the user pool
+    Description: Id for the users pool
   UserPoolName:
     Value:
       Ref: userPoolName
   AppClientIDWeb:
     Value:
       Ref: UserPoolClientWeb
-    Description: The user pool app client id for web
+    Description: The users pool app client id for web
   AppClientID:
     Value:
       Ref: UserPoolClient
-    Description: The user pool app client id
+    Description: The users pool app client id
   AppClientSecret:
     Value:
       Fn::GetAtt:

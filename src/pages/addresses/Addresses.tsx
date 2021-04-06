@@ -18,7 +18,7 @@ const ADDRESSES: React.FC = () => {
   return (
     <div className={'widget'}>
       {!showCreate && (
-        <button onClick={() => setShowCreate(true)}>Add skill</button>
+        <button onClick={() => setShowCreate(true)}>Add address</button>
       )}
       {addresses.map((s: Address) => (
         <div key={s.id}>{s.town}</div>
