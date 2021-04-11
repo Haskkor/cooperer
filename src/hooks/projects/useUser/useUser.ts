@@ -5,7 +5,7 @@ import { QueryObserverResult, RefetchOptions, useQuery } from 'react-query';
 import { getUser } from '../../../graphql/queries';
 import { User } from '../../../types/user';
 import { createUser as createUserMutation } from '../../../graphql/mutations';
-import { Address } from '../../../types/address';
+// import { Address } from '../../../types/address';
 
 interface Data {
   getUser: {
@@ -14,7 +14,7 @@ interface Data {
 }
 
 export interface FormUser {
-  address: Address;
+  // address: Address;
   description?: string;
   email: string;
   userName: string;
