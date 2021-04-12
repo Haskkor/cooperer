@@ -23,7 +23,9 @@ interface UseAddress {
   address?: Address;
   error: unknown;
   isLoading: boolean;
-  createAddress(input: FormAddress): void;
+  createAddress(
+    input: FormAddress
+  ): Promise<{ data: { createAddress: Address } }>;
   refetch(
     options?: RefetchOptions
   ): Promise<QueryObserverResult<Data, unknown>>;
@@ -44,10 +46,10 @@ const useAddress: (id?: string) => UseAddress = (id?: string) => {
   const address = pathOr(undefined, ['getAddress', 'item'])(data);
 
   const createAddress = async (input: FormAddress) =>
-    await API.graphql({
+    (await API.graphql({
       query: createAddressMutation,
       variables: { input }
-    });
+    })) as { data: { createAddress: Address } };
 
   return {
     address,

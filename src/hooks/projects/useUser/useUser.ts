@@ -5,7 +5,8 @@ import { QueryObserverResult, RefetchOptions, useQuery } from 'react-query';
 import { getUser } from '../../../graphql/queries';
 import { User } from '../../../types/user';
 import { createUser as createUserMutation } from '../../../graphql/mutations';
-// import { Address } from '../../../types/address';
+import { Address } from '../../../types/address';
+import useAddress from '../useAddress/useAddress';
 
 interface Data {
   getUser: {
@@ -14,7 +15,7 @@ interface Data {
 }
 
 export interface FormUser {
-  // address: Address;
+  address: Address;
   description?: string;
   email: string;
   userName: string;
@@ -31,6 +32,7 @@ interface UseUser {
 }
 
 const useUser: (id?: string) => UseUser = (id?: string) => {
+  const { createAddress } = useAddress();
   const { data, isLoading, refetch, error } = useQuery(
     ['getUser'],
     async () => {
@@ -49,11 +51,17 @@ const useUser: (id?: string) => UseUser = (id?: string) => {
   });
 
   const createUser = async (user: FormUser) => {
+    const inputAddress = user.address;
+    console.log('1', inputAddress, user);
+    const example = await createAddress(inputAddress);
+    console.log('ex', example);
     const input = {
       ...user,
+      address: example.data.createAddress,
       userName: awsUser.data.username,
       email: awsUser.data.attributes.email
     };
+    console.log('ex2', input);
     await API.graphql({
       query: createUserMutation,
       variables: { input }
