@@ -19,6 +19,7 @@ export const getAddress = /* GraphQL */ `
           createdAt
           updatedAt
         }
+        addressId
         description
         email
         id
@@ -60,6 +61,7 @@ export const listAddresss = /* GraphQL */ `
         suburb
         town
         user {
+          addressId
           description
           email
           id
@@ -146,6 +148,7 @@ export const getProjectComment = /* GraphQL */ `
         }
         name
         owner {
+          addressId
           description
           email
           id
@@ -177,6 +180,7 @@ export const getProjectComment = /* GraphQL */ `
           createdAt
           updatedAt
         }
+        addressId
         description
         email
         id
@@ -226,6 +230,7 @@ export const listProjectComments = /* GraphQL */ `
         }
         title
         user {
+          addressId
           description
           email
           id
@@ -271,6 +276,7 @@ export const getLocation = /* GraphQL */ `
         }
         name
         owner {
+          addressId
           description
           email
           id
@@ -391,6 +397,7 @@ export const getProject = /* GraphQL */ `
           createdAt
           updatedAt
         }
+        addressId
         description
         email
         id
@@ -475,6 +482,7 @@ export const listProjects = /* GraphQL */ `
         }
         name
         owner {
+          addressId
           description
           email
           id
@@ -562,6 +570,7 @@ export const getUser = /* GraphQL */ `
         suburb
         town
         user {
+          addressId
           description
           email
           id
@@ -572,6 +581,7 @@ export const getUser = /* GraphQL */ `
         createdAt
         updatedAt
       }
+      addressId
       description
       email
       id
@@ -643,6 +653,7 @@ export const listUsers = /* GraphQL */ `
           createdAt
           updatedAt
         }
+        addressId
         description
         email
         id

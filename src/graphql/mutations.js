@@ -22,6 +22,7 @@ export const createAddress = /* GraphQL */ `
           createdAt
           updatedAt
         }
+        addressId
         description
         email
         id
@@ -70,6 +71,7 @@ export const updateAddress = /* GraphQL */ `
           createdAt
           updatedAt
         }
+        addressId
         description
         email
         id
@@ -118,6 +120,7 @@ export const deleteAddress = /* GraphQL */ `
           createdAt
           updatedAt
         }
+        addressId
         description
         email
         id
@@ -257,6 +260,7 @@ export const createCategoryProject = /* GraphQL */ `
         }
         name
         owner {
+          addressId
           description
           email
           id
@@ -325,6 +329,7 @@ export const updateCategoryProject = /* GraphQL */ `
         }
         name
         owner {
+          addressId
           description
           email
           id
@@ -393,6 +398,7 @@ export const deleteCategoryProject = /* GraphQL */ `
         }
         name
         owner {
+          addressId
           description
           email
           id
@@ -451,6 +457,7 @@ export const createProjectComment = /* GraphQL */ `
         }
         name
         owner {
+          addressId
           description
           email
           id
@@ -482,6 +489,7 @@ export const createProjectComment = /* GraphQL */ `
           createdAt
           updatedAt
         }
+        addressId
         description
         email
         id
@@ -542,6 +550,7 @@ export const updateProjectComment = /* GraphQL */ `
         }
         name
         owner {
+          addressId
           description
           email
           id
@@ -573,6 +582,7 @@ export const updateProjectComment = /* GraphQL */ `
           createdAt
           updatedAt
         }
+        addressId
         description
         email
         id
@@ -633,6 +643,7 @@ export const deleteProjectComment = /* GraphQL */ `
         }
         name
         owner {
+          addressId
           description
           email
           id
@@ -664,6 +675,7 @@ export const deleteProjectComment = /* GraphQL */ `
           createdAt
           updatedAt
         }
+        addressId
         description
         email
         id
@@ -725,6 +737,7 @@ export const createLocation = /* GraphQL */ `
         }
         name
         owner {
+          addressId
           description
           email
           id
@@ -786,6 +799,7 @@ export const updateLocation = /* GraphQL */ `
         }
         name
         owner {
+          addressId
           description
           email
           id
@@ -847,6 +861,7 @@ export const deleteLocation = /* GraphQL */ `
         }
         name
         owner {
+          addressId
           description
           email
           id
@@ -940,6 +955,7 @@ export const createProject = /* GraphQL */ `
           createdAt
           updatedAt
         }
+        addressId
         description
         email
         id
@@ -1058,6 +1074,7 @@ export const updateProject = /* GraphQL */ `
           createdAt
           updatedAt
         }
+        addressId
         description
         email
         id
@@ -1176,6 +1193,7 @@ export const deleteProject = /* GraphQL */ `
           createdAt
           updatedAt
         }
+        addressId
         description
         email
         id
@@ -1260,6 +1278,7 @@ export const createProjectLikes = /* GraphQL */ `
         }
         name
         owner {
+          addressId
           description
           email
           id
@@ -1290,6 +1309,7 @@ export const createProjectLikes = /* GraphQL */ `
           createdAt
           updatedAt
         }
+        addressId
         description
         email
         id
@@ -1349,6 +1369,7 @@ export const updateProjectLikes = /* GraphQL */ `
         }
         name
         owner {
+          addressId
           description
           email
           id
@@ -1379,6 +1400,7 @@ export const updateProjectLikes = /* GraphQL */ `
           createdAt
           updatedAt
         }
+        addressId
         description
         email
         id
@@ -1438,6 +1460,7 @@ export const deleteProjectLikes = /* GraphQL */ `
         }
         name
         owner {
+          addressId
           description
           email
           id
@@ -1468,6 +1491,7 @@ export const deleteProjectLikes = /* GraphQL */ `
           createdAt
           updatedAt
         }
+        addressId
         description
         email
         id
@@ -1527,6 +1551,7 @@ export const createProjectParticipants = /* GraphQL */ `
         }
         name
         owner {
+          addressId
           description
           email
           id
@@ -1557,6 +1582,7 @@ export const createProjectParticipants = /* GraphQL */ `
           createdAt
           updatedAt
         }
+        addressId
         description
         email
         id
@@ -1616,6 +1642,7 @@ export const updateProjectParticipants = /* GraphQL */ `
         }
         name
         owner {
+          addressId
           description
           email
           id
@@ -1646,6 +1673,7 @@ export const updateProjectParticipants = /* GraphQL */ `
           createdAt
           updatedAt
         }
+        addressId
         description
         email
         id
@@ -1705,6 +1733,7 @@ export const deleteProjectParticipants = /* GraphQL */ `
         }
         name
         owner {
+          addressId
           description
           email
           id
@@ -1735,6 +1764,7 @@ export const deleteProjectParticipants = /* GraphQL */ `
           createdAt
           updatedAt
         }
+        addressId
         description
         email
         id
@@ -1794,6 +1824,7 @@ export const createProjectSkills = /* GraphQL */ `
         }
         name
         owner {
+          addressId
           description
           email
           id
@@ -1865,6 +1896,7 @@ export const updateProjectSkills = /* GraphQL */ `
         }
         name
         owner {
+          addressId
           description
           email
           id
@@ -1936,6 +1968,7 @@ export const deleteProjectSkills = /* GraphQL */ `
         }
         name
         owner {
+          addressId
           description
           email
           id
@@ -2007,6 +2040,7 @@ export const createProjectStars = /* GraphQL */ `
         }
         name
         owner {
+          addressId
           description
           email
           id
@@ -2037,6 +2071,7 @@ export const createProjectStars = /* GraphQL */ `
           createdAt
           updatedAt
         }
+        addressId
         description
         email
         id
@@ -2096,6 +2131,7 @@ export const updateProjectStars = /* GraphQL */ `
         }
         name
         owner {
+          addressId
           description
           email
           id
@@ -2126,6 +2162,7 @@ export const updateProjectStars = /* GraphQL */ `
           createdAt
           updatedAt
         }
+        addressId
         description
         email
         id
@@ -2185,6 +2222,7 @@ export const deleteProjectStars = /* GraphQL */ `
         }
         name
         owner {
+          addressId
           description
           email
           id
@@ -2215,6 +2253,7 @@ export const deleteProjectStars = /* GraphQL */ `
           createdAt
           updatedAt
         }
+        addressId
         description
         email
         id
@@ -2348,6 +2387,7 @@ export const createUser = /* GraphQL */ `
         suburb
         town
         user {
+          addressId
           description
           email
           id
@@ -2358,6 +2398,7 @@ export const createUser = /* GraphQL */ `
         createdAt
         updatedAt
       }
+      addressId
       description
       email
       id
@@ -2425,6 +2466,7 @@ export const updateUser = /* GraphQL */ `
         suburb
         town
         user {
+          addressId
           description
           email
           id
@@ -2435,6 +2477,7 @@ export const updateUser = /* GraphQL */ `
         createdAt
         updatedAt
       }
+      addressId
       description
       email
       id
@@ -2502,6 +2545,7 @@ export const deleteUser = /* GraphQL */ `
         suburb
         town
         user {
+          addressId
           description
           email
           id
@@ -2512,6 +2556,7 @@ export const deleteUser = /* GraphQL */ `
         createdAt
         updatedAt
       }
+      addressId
       description
       email
       id
@@ -2597,6 +2642,7 @@ export const createUserSkills = /* GraphQL */ `
           createdAt
           updatedAt
         }
+        addressId
         description
         email
         id
@@ -2655,6 +2701,7 @@ export const updateUserSkills = /* GraphQL */ `
           createdAt
           updatedAt
         }
+        addressId
         description
         email
         id
@@ -2713,6 +2760,7 @@ export const deleteUserSkills = /* GraphQL */ `
           createdAt
           updatedAt
         }
+        addressId
         description
         email
         id

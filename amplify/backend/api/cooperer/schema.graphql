@@ -89,7 +89,8 @@ type Skill @model {
 }
 
 type User @model {
-  address: Address!
+  address: Address! @connection(fields: ["addressId"])
+  addressId: ID!
   description: String
   email: String!
   id: ID!
