@@ -169,6 +169,7 @@ export const getProjectComment = /* GraphQL */ `
         createdAt
         updatedAt
       }
+      projectId
       title
       user {
         address {
@@ -203,6 +204,7 @@ export const getProjectComment = /* GraphQL */ `
         createdAt
         updatedAt
       }
+      userId
       createdAt
       updatedAt
     }
@@ -228,6 +230,7 @@ export const listProjectComments = /* GraphQL */ `
           createdAt
           updatedAt
         }
+        projectId
         title
         user {
           addressId
@@ -238,6 +241,7 @@ export const listProjectComments = /* GraphQL */ `
           createdAt
           updatedAt
         }
+        userId
         createdAt
         updatedAt
       }
@@ -349,7 +353,9 @@ export const getProject = /* GraphQL */ `
         items {
           content
           id
+          projectId
           title
+          userId
           createdAt
           updatedAt
         }

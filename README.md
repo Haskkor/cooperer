@@ -42,4 +42,4 @@ Comment | Project && User | NOK
 Location | No dep | OK
 Project | Category && Location && User | NOK
 Skill | No dep | OK
-User | Address | NOK
+User | Address | OK

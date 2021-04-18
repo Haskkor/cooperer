@@ -24,9 +24,11 @@ type CategoryProject @model(queries: null) {
 type ProjectComment @model {
   content: String!
   id: ID!
-  project: Project! @connection(name: "ProjectComments")
+  project: Project! @connection(fields: ["projectId"], name: "ProjectComments")
+  projectId: ID!
   title: String!
-  user: User!
+  user: User! @connection(fields: ["userId"])
+  userId: ID!
 }
 
 type Location @model {

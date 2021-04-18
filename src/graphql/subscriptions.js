@@ -448,6 +448,7 @@ export const onCreateProjectComment = /* GraphQL */ `
         createdAt
         updatedAt
       }
+      projectId
       title
       user {
         address {
@@ -482,6 +483,7 @@ export const onCreateProjectComment = /* GraphQL */ `
         createdAt
         updatedAt
       }
+      userId
       createdAt
       updatedAt
     }
@@ -538,6 +540,7 @@ export const onUpdateProjectComment = /* GraphQL */ `
         createdAt
         updatedAt
       }
+      projectId
       title
       user {
         address {
@@ -572,6 +575,7 @@ export const onUpdateProjectComment = /* GraphQL */ `
         createdAt
         updatedAt
       }
+      userId
       createdAt
       updatedAt
     }
@@ -628,6 +632,7 @@ export const onDeleteProjectComment = /* GraphQL */ `
         createdAt
         updatedAt
       }
+      projectId
       title
       user {
         address {
@@ -662,6 +667,7 @@ export const onDeleteProjectComment = /* GraphQL */ `
         createdAt
         updatedAt
       }
+      userId
       createdAt
       updatedAt
     }
@@ -859,7 +865,9 @@ export const onCreateProject = /* GraphQL */ `
         items {
           content
           id
+          projectId
           title
+          userId
           createdAt
           updatedAt
         }
@@ -975,7 +983,9 @@ export const onUpdateProject = /* GraphQL */ `
         items {
           content
           id
+          projectId
           title
+          userId
           createdAt
           updatedAt
         }
@@ -1091,7 +1101,9 @@ export const onDeleteProject = /* GraphQL */ `
         items {
           content
           id
+          projectId
           title
+          userId
           createdAt
           updatedAt
         }

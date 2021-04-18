@@ -51,17 +51,13 @@ const useUser: (id?: string) => UseUser = (id?: string) => {
   });
 
   const createUser = async (user: FormUser) => {
-    const inputAddress = user.address;
-    console.log('1', inputAddress, user);
-    const example = await createAddress(inputAddress);
-    console.log('ex', example);
+    const address = await createAddress(user.address);
     const input = {
-      ...user,
-      address: example.data.createAddress,
+      addressId: address.data.createAddress.id,
+      description: user.description,
       userName: awsUser.data.username,
       email: awsUser.data.attributes.email
     };
-    console.log('ex2', input);
     await API.graphql({
       query: createUserMutation,
       variables: { input }
