@@ -38,8 +38,8 @@ await API.graphql(graphqlOperation(deletePost, variables))
 
 Address | No dep | OK
 Category | No dep | OK
-Comment | Project && User | NOK
+**Comment | Project && User | NOK**
 Location | No dep | OK
-Project | Category && Location && User | NOK
+**Project | Category && Location && User | NOK**
 Skill | No dep | OK
 User | Address | OK
