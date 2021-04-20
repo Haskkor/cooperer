@@ -1,12 +1,13 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
+import LAZYROUTE from '../LazyRoute/LazyRoute';
 
 const ROUTER: React.FC = () => (
   <div id="router-content" className="router-content">
     <ErrorBoundary>
       <ScrollToTop>
         <Switch>
-          <LazyRoute
+          <LAZYROUTE
             path={getAuthedPath('/wallet/:accountId')}
             component={AccountPage}
           />
