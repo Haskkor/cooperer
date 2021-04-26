@@ -1,19 +1,18 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 
-import LAZYROUTE from '../LazyRoute/LazyRoute';
 import ErrorBoundary from '../../components/ErrorBoundary/ErrorBoundary';
+import App from '../../App';
+import ScrollToTop from '../../components/ScrollToTop/ScrollToTop';
+import LazyRoute from '../LazyRoute/LazyRoute';
 
 const ROUTER: React.FC = () => (
   <div id="router-content" className="router-content">
     <ErrorBoundary>
       <ScrollToTop>
         <Switch>
-          <LAZYROUTE
-            path={getAuthedPath('/wallet/:accountId')}
-            component={AccountPage}
-          />
-          <Route path={'/'} component={HomePage} />
+          <LazyRoute path={'/'} component={App} />
+          <Route path={'/'} component={App} />
         </Switch>
       </ScrollToTop>
     </ErrorBoundary>
