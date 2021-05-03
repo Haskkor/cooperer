@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { ErrorInfo } from 'react';
+import { Dispatch, ErrorInfo, SetStateAction } from 'react';
 
 import Messages from '../Messages/Messages';
 
@@ -16,7 +16,7 @@ interface State {
   info: any;
 }
 
-export const useAsyncError = () => {
+export const useAsyncError = (): Dispatch<SetStateAction<Error | null>> => {
   const [error, setError] = React.useState<Error | null>(null);
   if (error) throw error;
   return setError;
